@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Ruby on rails,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.开发环境:ruby-2.6.4rails-6.0.1node-12.13.0(xdite教材用的 Rails 版本是 5.0.0 ) 建立一个新 Rails 项目rails new 项目名1$ rails new rails104  建立 git 做版">
+<meta name="keywords" content="Ruby on rails">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ruby on rails-讨论版">
+<meta property="og:url" content="http://abbyyecp.com/2019/11/21/ruby-on-rails-讨论版/index.html">
+<meta property="og:site_name" content="AbbyYeCp&#39;s blog">
+<meta property="og:description" content="本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.开发环境:ruby-2.6.4rails-6.0.1node-12.13.0(xdite教材用的 Rails 版本是 5.0.0 ) 建立一个新 Rails 项目rails new 项目名1$ rails new rails104  建立 git 做版">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95gn8a8esj31gk0botgx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95i2sg5vtj31gg09kwqf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95h9ylc83j31go05qq9q.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hgts17ej31c90u01kx.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ira3oqwj317a0nygti.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95itd36dbj30s40hq488.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ivm2r71j30my0hon3d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hmdfs61j31fw034799.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ht6irqnj31fk0r6q9f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95m1zm78lj30ss0hqdla.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mah4yaoj31la0jq0z5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mi0y6i6j310008qacz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mzmqjtsj31eh0u0446.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95no1q6r2j30vw0hqwjy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ntq3l4wj31020co77y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95nuur7caj32800l6q50.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95nwq452zj32800m20v0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9if22cricj31380ae77e.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ifm6tp9dj3104080who.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ift42ip7j327v0u0mzn.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9igad697aj32500u077w.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9igt9fxkzj31wh0u0qbk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ihha4akbj31xg0u0diy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iibb3j90j32300u0jus.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iicnwk0xj32000u07ap.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iit8f4rxj30n60kl790.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ij0bxcu7j31400f8jtj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ij0nscwgj32800p4aci.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ijr7l9sgj324a0u0goy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ik4yzdv1j327q0skae5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ik6bfnvkj32550u0wix.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikhv609jj31qj0u00zl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iki7bnb2j32040u078a.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikonauc1j310008u417.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikw26itlj30p60i5n1g.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ild7xop0j30qg0hqgqm.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9il0d6al9j313w0i4jss.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ilc1t207j30n60hpdkh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9j91458h1j31xk0u0q63.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ja5nbj19j31fm0u019f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jabqn2knj31ze0qikbv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaj7swqej31wh0u0whu.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jas0d5hxj30rg0hvdna.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaz11evxj31zo07mdi0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaz943wmj31zm0cs0vw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jb4vbintj31020eajv6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jb63bcmdj32040u0gp2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jbt2xt20j31y50u0q7f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jby3rq7kj31400j6q4g.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jc61hsgpj31z205ytfd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jceuu3c1j310007adhz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jck9snhlj31020ektep.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcm9dxvij30vs0co0vv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcoxw9taj31000bcn13.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcrr4i54j30lk0hvq74.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcxpf400j30pu0mlgtf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd0bsfycj31va0u0agz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd2wt5rsj31fe0bmwle.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd49eac5j327w0te0vg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd95ggsbj32800ns41r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdgovhbyj31yh0u0agj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdrpy9zej30qy0m3ai2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdurpv2aj32800notbm.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je0qs1d8j31030aijv1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je4q57j8j30ms0hq436.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je7y26axj32800rqtcc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jebut1moj30jm0mkq8q.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jh1y56zrj30mw0ljgqa.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhfjfwfoj30io0iqwih.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhjvswwnj30ng0mk44t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhp9b02tj31400dk75i.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhu4h5fgj31020dc0yy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jierw3sbj30sc0bedj5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jifwcbtgj31000ew0zv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jigvqfppj30ju090taq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jitjexw1j31000asq6t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jj5bireij31000cqdm9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jj7tx34uj31uk0u00w7.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjgmkaxfj30la0ko43o.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjnwe0frj30q20hpdl5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjuxryy7j30q00la45f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjyb6tvdj32800sutcn.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk0i697bj31400gamzg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk34i5qgj30yc0c00w5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk41a98vj327y0tatbp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk8syjwuj30ta0hqn1x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jkbgu01rj313y0i8juw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk8syjwuj30ta0hqn1x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jkhytsh3j30z60d6wiy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jlbk04mvj30u20hp0x0.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jln8nbwfj30mi0hpq8r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jlwjjp9nj30qu0hqjwz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jm4u24wij30rq0l2tfi.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jm83azbaj31lj0u0jyg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jck9snhlj31020ektep.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmnrl9mnj31000ea45o.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmr2w1c9j310408cgo6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmwfzg4oj31020cgjw3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jn40svp0j31ao0u0kjl.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnhqd8apj31020fudsj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnqb6v6wj30t60hvgtg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnrihutfj31nx0u0n49.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jns41sejj31lx0u0gss.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jo3znlu5j30mu0i10yp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9johu8jwuj30u80jn444.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9johmejb7j31oe0qkqoh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jop9pk4nj30ng0mgjx5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jor795a3j30zz09gwin.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jotpjt38j31000e00x6.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpcky94yj30se0j4k0y.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpb0n4xaj31jt0u0461.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpb6xxspj31jz0u0qaf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jps7jexrj31me0u0k3d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jps5dcyyj30yi0hpac3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpwywvmzj31400ew763.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqorwrs1j30yi0hq0xe.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqw9ylqaj30se0irdoh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqx4mwsfj31za0u0q6q.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jr0rsbi8j30wk0daaej.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jr60y2llj32800qidjh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jreqj4u4j30vy0c00wv.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrhqr847j30x20hpgq1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrm7uno0j30ug0jpwo3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrn1yc3lj31xc0u0q7e.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrtwzv10j31iw0u0k0r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrztsowhj31400h2761.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js0lhxftj31420i6whj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js41qtxoj30rs0hqdmg.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js56twbcj31420gudiw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jshfb92jj30vs0cwwib.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keqel4xkj30ru0hptfa.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keqrbj44j30io0ja79n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kf1jmf2mj319i0mk79n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kewsfjmsj30q60hwteq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keycul7kj30ry0hpn2l.jpg">
+<meta property="og:updated_time" content="2019-12-04T01:16:47.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ruby on rails-讨论版">
+<meta name="twitter:description" content="本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.开发环境:ruby-2.6.4rails-6.0.1node-12.13.0(xdite教材用的 Rails 版本是 5.0.0 ) 建立一个新 Rails 项目rails new 项目名1$ rails new rails104  建立 git 做版">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006y8mN6gy1g95gn8a8esj31gk0botgx.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://abbyyecp.com/2019/11/21/ruby-on-rails-讨论版/">
+
+
+
+
+
+  <title>ruby on rails-讨论版 | AbbyYeCp's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AbbyYeCp's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">伪善假文青冒牌程序媛</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2019/11/21/ruby-on-rails-讨论版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AbbyYeCp">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1g0d1vx8c0lj30u00w6aqm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AbbyYeCp's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ruby on rails-讨论版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T10:06:30+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.<br>开发环境:<br>ruby-2.6.4<br>rails-6.0.1<br>node-12.13.0<br>(xdite教材用的 Rails 版本是 5.0.0 )</p>
+<h2 id="建立一个新-Rails-项目"><a href="#建立一个新-Rails-项目" class="headerlink" title="建立一个新 Rails 项目"></a>建立一个新 Rails 项目</h2><p>rails new 项目名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rails new rails104</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95gn8a8esj31gk0botgx.jpg" width="100%"></p>
+<h2 id="建立-git-做版本控制"><a href="#建立-git-做版本控制" class="headerlink" title="建立 git 做版本控制"></a>建立 git 做版本控制</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> rails104</span><br><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"Initial Commit"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95i2sg5vtj31gg09kwqf.jpg" width="100%" style="margin:0;"></p>
+<h2 id="帮-Rails-项目穿上衣服“Bootstrap”"><a href="#帮-Rails-项目穿上衣服“Bootstrap”" class="headerlink" title="帮 Rails 项目穿上衣服“Bootstrap”"></a>帮 Rails 项目穿上衣服“Bootstrap”</h2><ul>
+<li>新建一个分支 git checkout -b 分支名<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b abby01</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95h9ylc83j31go05qq9q.jpg" width="100%" style="margin:0;"><br><a id="more"></a></p>
+<h3 id="引入Bootstrap"><a href="#引入Bootstrap" class="headerlink" title="引入Bootstrap"></a>引入Bootstrap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add bootstrap jquery popper.js</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hgts17ej31c90u01kx.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li><p>修改config/webpack/environment.js 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ira3oqwj317a0nygti.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改app/javascript/packs/application.js 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95itd36dbj30s40hq488.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改config/webpacker.yml 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ivm2r71j30my0hon3d.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="将-Bootstrap-的-CSS-套件装进项目里面"><a href="#将-Bootstrap-的-CSS-套件装进项目里面" class="headerlink" title="将 Bootstrap 的 CSS 套件装进项目里面"></a>将 Bootstrap 的 CSS 套件装进项目里面</h3><ul>
+<li>将 application.css 更名为 application.scss<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hmdfs61j31fw034799.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>在app/assets/stylesheets/application.scss文件加入下面这行代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ *= require bootstrap/scss/bootstrap</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ht6irqnj31fk0r6q9f.jpg" width="100%" style="margin:0;"></p>
+<h3 id="将变更-commit-进去-git-里面"><a href="#将变更-commit-进去-git-里面" class="headerlink" title="将变更 commit 进去 git 里面"></a>将变更 commit 进去 git 里面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"add bootstrap to project"</span></span><br></pre></td></tr></table></figure>
+<h2 id="套用-Bootstrap-的-html-样式"><a href="#套用-Bootstrap-的-html-样式" class="headerlink" title="套用 Bootstrap 的 html 样式"></a>套用 Bootstrap 的 html 样式</h2><h3 id="新增-app-views-common-文件夹"><a href="#新增-app-views-common-文件夹" class="headerlink" title="新增 app/views/common 文件夹"></a>新增 app/views/common 文件夹</h3><pre><code class="bash">$ mkdir app/views/common
+</code></pre>
+<h3 id="新增-navbar"><a href="#新增-navbar" class="headerlink" title="新增 navbar"></a>新增 navbar</h3><pre><code class="bash">$ touch app/views/common/_navbar.html.erb
+</code></pre>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-expand-lg navbar-light bg-light"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container-fluid"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Rails 104<span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"collapse navbar-collapse d-flex justify-content-end"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">li</span>&gt;</span>
+          <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("登录", '#', <span class="attr">class:</span> "<span class="attr">nav-link</span>") %&gt;</span>
+        <span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">nav</span>&gt;</span>
+</code></pre>
+<h3 id="新增-footer"><a href="#新增-footer" class="headerlink" title="新增 footer"></a>新增 footer</h3><pre><code class="bash">$ touch app/views/common/_footer.html.erb
+</code></pre>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">style</span>=<span class="string">"margin-top: 100px;"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span>Copyright ©2019 Rails104
+    <span class="tag">&lt;<span class="name">br</span>&gt;</span>Design by
+    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">target</span>=<span class="string">_new</span>&gt;</span>AbbyYeCp<span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">footer</span>&gt;</span>
+</code></pre>
+<h3 id="修改全域-HTML-样式-application-html-erb"><a href="#修改全域-HTML-样式-application-html-erb" class="headerlink" title="修改全域 HTML 样式 application.html.erb"></a>修改全域 HTML 样式 application.html.erb</h3><pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container-fluid"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">render</span> "<span class="attr">common</span>/<span class="attr">navbar</span>" %&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">yield</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">render</span> "<span class="attr">common</span>/<span class="attr">footer</span>" %&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95m1zm78lj30ss0hqdla.jpg" width="100%" style="margin:0;"></p>
+<h3 id="产生一个新的空-Hello-World-页面-（放在-welcome-index"><a href="#产生一个新的空-Hello-World-页面-（放在-welcome-index" class="headerlink" title="产生一个新的空 Hello World 页面 （放在 welcome#index)"></a>产生一个新的空 Hello World 页面 （放在 welcome#index)</h3><ul>
+<li><p>新增一个 welcome controller</p>
+<pre><code class="bash">$ rails g controller welcome
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mah4yaoj31la0jq0z5.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>新增一个空的 HelloWorld 页面</p>
+<pre><code class="bash">$ touch app/views/welcome/index.html.erb
+</code></pre>
+</li>
+</ul>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello World! <span class="tag">&lt;/<span class="name">h1</span>&gt;</span>
+</code></pre>
+<h3 id="将首页指到-welcome-下的-index-html-erb-页面"><a href="#将首页指到-welcome-下的-index-html-erb-页面" class="headerlink" title="将首页指到 welcome 下的 index.html.erb 页面"></a>将首页指到 welcome 下的 index.html.erb 页面</h3><ul>
+<li>修改 config/routes.rb，码入以下内容:<pre><code class="html">root &#39;welcome#index&#39;
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mi0y6i6j310008qacz.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-进度存档"><a href="#git-进度存档" class="headerlink" title="git 进度存档"></a>git 进度存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add bootstrap html"</span>
+</code></pre>
+<h3 id="运行-Rails-Server"><a href="#运行-Rails-Server" class="headerlink" title="运行 Rails Server"></a>运行 Rails Server</h3><pre><code class="bash">$ rails s
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95mzmqjtsj31eh0u0446.jpg" width="100%" style="margin:0;"></p>
+<h2 id="制作漂亮的“提示信息”"><a href="#制作漂亮的“提示信息”" class="headerlink" title="制作漂亮的“提示信息”"></a>制作漂亮的“提示信息”</h2><h3 id="新增-app-views-common-flashes-html-erb"><a href="#新增-app-views-common-flashes-html-erb" class="headerlink" title="新增 app/views/common/_flashes.html.erb"></a>新增 app/views/common/_flashes.html.erb</h3><pre><code class="bash">$ touch app/views/common/_flashes.html.erb
+</code></pre>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> <span class="attr">flash.any</span>? %&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">user_facing_flashes.each</span> <span class="attr">do</span> |<span class="attr">key</span>, <span class="attr">value</span>| %&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-dismissable alert-&lt;%= flash_class(key) %&gt;"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"alert"</span>&gt;</span>×<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">value</span> %&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+<h3 id="加入-app-helpers-flashes-helper-rb"><a href="#加入-app-helpers-flashes-helper-rb" class="headerlink" title="加入 app/helpers/flashes_helper.rb"></a>加入 app/helpers/flashes_helper.rb</h3><pre><code class="bash">$ touch app/helpers/flashes_helper.rb
+</code></pre>
+<p>码入:</p>
+<pre><code class="rb"><span class="class"><span class="keyword">module</span> <span class="title">FlashesHelper</span></span>
+  FLASH_CLASSES = { <span class="symbol">alert:</span> <span class="string">"danger"</span>, <span class="symbol">notice:</span> <span class="string">"success"</span>, <span class="symbol">warning:</span> <span class="string">"warning"</span>}.freeze
+
+  <span class="function"><span class="keyword">def</span> <span class="title">flash_class</span><span class="params">(key)</span></span>
+    FLASH_CLASSES.fetch key.to_sym, key
+  <span class="keyword">end</span>
+
+  <span class="function"><span class="keyword">def</span> <span class="title">user_facing_flashes</span></span>
+    flash.to_hash.slice <span class="string">"alert"</span>, <span class="string">"notice"</span>, <span class="string">"warning"</span> 
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
+<h3 id="在-application-html-erb-内加入-flash-这个-partial"><a href="#在-application-html-erb-内加入-flash-这个-partial" class="headerlink" title="在 application.html.erb 内加入 flash 这个 partial"></a>在 application.html.erb 内加入 flash 这个 partial</h3><pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">render</span> "<span class="attr">common</span>/<span class="attr">flashes</span>" %&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95no1q6r2j30vw0hqwjy.jpg" width="100%" style="margin:0;"></p>
+<h3 id="测试-flash-helper-的功能"><a href="#测试-flash-helper-的功能" class="headerlink" title="测试 flash helper 的功能"></a>测试 flash helper 的功能</h3><ul>
+<li>修改 app/controllers/welcome_controller.rb<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">index</span></span>
+  flash[<span class="symbol">:notice</span>] = <span class="string">"早安！你好！"</span>
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ntq3l4wj31020co77y.jpg" width="100%" style="margin:0;"><br>预期结果:<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95nuur7caj32800l6q50.jpg" width="100%" style="margin:0;"><pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">index</span></span>
+  flash[<span class="symbol">:alert</span>] = <span class="string">"晚安！该睡了！"</span>
+<span class="keyword">end</span>
+</code></pre>
+预期结果:<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95nwq452zj32800m20v0.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档"><a href="#git-存档" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add bootstrap flash function"</span>
+</code></pre>
+<h2 id="建立讨论群的架构"><a href="#建立讨论群的架构" class="headerlink" title="建立讨论群的架构"></a>建立讨论群的架构</h2><pre><code class="bash">$ git checkout -b abby02
+</code></pre>
+<h3 id="设计-Group-的-model-架构"><a href="#设计-Group-的-model-架构" class="headerlink" title="设计 Group 的 model 架构"></a>设计 Group 的 model 架构</h3><ul>
+<li><p>为了做到在讨论群要有“标题”与“叙述”，我们在这里要建立一个 model Group，并建立数据表 group 的两个栏位:<br>title (string 字串属性)<br>description (text 文字属性)</p>
+<pre><code class="bash">$ rails g model group title:string description:text
+</code></pre>
+</li>
+<li><p>将数据库建立起来，并执行 rake db:migrate</p>
+<pre><code class="bash">$ rake db:migrate
+</code></pre>
+</li>
+</ul>
+<h3 id="产生-groups-controller"><a href="#产生-groups-controller" class="headerlink" title="产生 groups controller"></a>产生 groups controller</h3><pre><code class="bash">$ rails g controller groups
+</code></pre>
+<h3 id="建立-index-action-以及-index-的-view"><a href="#建立-index-action-以及-index-的-view" class="headerlink" title="建立 index action 以及 index 的 view"></a>建立 index action 以及 index 的 view</h3><ul>
+<li>修改 app/controllers/groups_controller.rb</li>
+</ul>
+<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">index</span></span>
+  @groups = Group.all
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9if22cricj31380ae77e.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>新建 app/views/groups/index.html.erb页面<pre><code class="bash">$ touch app/views/groups/index.html.erb
+</code></pre>
+码入:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group d-flex justify-content-end mt-3 mb-3"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">New</span> <span class="attr">group</span>", <span class="attr">new_group_path</span>, <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-primary</span> <span class="attr">pull-right</span>") %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-hover"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">thead</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">td</span>&gt;</span>ID<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Description<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">groups.each</span> <span class="attr">do</span> |<span class="attr">group</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.id</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>(<span class="attr">group.title</span>, <span class="attr">group_path</span>(<span class="attr">group</span>)) %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.description</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span>
+            <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Edit</span>", <span class="attr">edit_group_path</span>(<span class="attr">group</span>), <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-outline-success</span>")%&gt;</span>
+            <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Delete</span>", <span class="attr">group_path</span>(<span class="attr">group</span>),    <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-outline-danger</span>", </span>
+<span class="tag">                <span class="attr">method:</span> <span class="attr">:delete</span>, <span class="attr">data:</span> { <span class="attr">confirm:</span> "<span class="attr">Are</span> <span class="attr">you</span> <span class="attr">sure</span>?" } )%&gt;</span>
+        <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="在-routing-上挂上-groups"><a href="#在-routing-上挂上-groups" class="headerlink" title="在 routing 上挂上 groups"></a>在 routing 上挂上 groups</h3><ul>
+<li><p>在 root ‘welcome#index’ 前加上一行 resources :groups</p>
+<pre><code class="rb">resources <span class="symbol">:groups</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ifm6tp9dj3104080who.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>打开 <a href="http://localhost:3000/groups" target="_blank" rel="noopener">http://localhost:3000/groups</a> 预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ift42ip7j327v0u0mzn.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="添加一些数据"><a href="#添加一些数据" class="headerlink" title="添加一些数据"></a>添加一些数据</h3><pre><code class="bash">$ rails console
+$ Group.create(title: <span class="string">"Book : )"</span>, description: <span class="string">"What's your favorite book ?"</span>)
+$ Group.create(title: <span class="string">"Food"</span>, description: <span class="string">"What's your favorite food ?"</span>)
+</code></pre>
+<ul>
+<li><a href="http://localhost:3000/groups" target="_blank" rel="noopener">http://localhost:3000/groups</a> 预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9igad697aj32500u077w.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-1"><a href="#git-存档-1" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"create groups index"</span>
+</code></pre>
+<h2 id="将首页换成讨论群一览表"><a href="#将首页换成讨论群一览表" class="headerlink" title="将首页换成讨论群一览表"></a>将首页换成讨论群一览表</h2><h3 id="修改-routing"><a href="#修改-routing" class="headerlink" title="修改 routing"></a>修改 routing</h3><ul>
+<li>把 root ‘welcome#index’ 删掉，换成 root ‘groups#index’<pre><code class="rb">Rails.application.routes.draw <span class="keyword">do</span>
+  resources <span class="symbol">:groups</span>
++  root <span class="string">'groups#index'</span>
+-  root <span class="string">'welcome#index'</span>
+<span class="keyword">end</span>
+</code></pre>
+</li>
+<li>然后你就可以在 <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a> 看到 Group 一览表了<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9igt9fxkzj31wh0u0qbk.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-2"><a href="#git-存档-2" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"replace root with groups#index"</span>
+</code></pre>
+<h2 id="实现讨论群“新增”功能"><a href="#实现讨论群“新增”功能" class="headerlink" title="实现讨论群“新增”功能"></a>实现讨论群“新增”功能</h2><pre><code class="bash">$ git checkout -b abby03
+</code></pre>
+<h3 id="建立-new-action"><a href="#建立-new-action" class="headerlink" title="建立 new action"></a>建立 new action</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 加入 new action<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">new</span></span>
+  @group = Group.new
+<span class="keyword">end</span>
+</code></pre>
+<h3 id="建立-new-action-的表单"><a href="#建立-new-action-的表单" class="headerlink" title="建立 new action 的表单"></a>建立 new action 的表单</h3><pre><code class="bash">$ touch app/views/groups/new.html.erb
+</code></pre>
+码入:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4 col-md-offset-4 mx-auto"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"mt-3 mb-3"</span>&gt;</span>新增讨论版<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">hr</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">form_for</span> @<span class="attr">group</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+    标题
+    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span> %&gt;</span>
+    <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+    叙述
+    <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_area</span> <span class="attr">:description</span> %&gt;</span>
+    <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">:disable_with</span> =&gt;</span> 'Submitting...' %&gt;
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><a href="http://localhost:3000/groups/new，预期结果如下" target="_blank" rel="noopener">http://localhost:3000/groups/new，预期结果如下</a>:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ihha4akbj31xg0u0diy.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-3"><a href="#git-存档-3" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#new"</span>
+</code></pre>
+<h3 id="建立-create-action，接收数据并储存"><a href="#建立-create-action，接收数据并储存" class="headerlink" title="建立 create action，接收数据并储存"></a>建立 create action，接收数据并储存</h3><ul>
+<li>修改 app/controllers/groups_controller.rb</li>
+</ul>
+<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span>
+  @group = Group.new(group_params)
+  @group.save
+  redirect_to groups_path
+<span class="keyword">end</span>
+
+private
+
+<span class="function"><span class="keyword">def</span> <span class="title">group_params</span></span>
+  params.<span class="keyword">require</span>(<span class="symbol">:group</span>).permit(<span class="symbol">:title</span>, <span class="symbol">:description</span>)
+<span class="keyword">end</span>
+</code></pre>
+<ul>
+<li><p>新建一条讨论话题<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iibb3j90j32300u0jus.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iicnwk0xj32000u07ap.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-4"><a href="#git-存档-4" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#create"</span>
+</code></pre>
+<h2 id="实现讨论群“浏览”功能"><a href="#实现讨论群“浏览”功能" class="headerlink" title="实现讨论群“浏览”功能"></a>实现讨论群“浏览”功能</h2><h3 id="建立-show-action"><a href="#建立-show-action" class="headerlink" title="建立 show action"></a>建立 show action</h3><ul>
+<li>在 app/controllers/groups_controller.rb 加入 show action<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">show</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iit8f4rxj30n60kl790.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="加入-app-views-groups-show-html-erb"><a href="#加入-app-views-groups-show-html-erb" class="headerlink" title="加入 app/views/groups/show.html.erb"></a>加入 app/views/groups/show.html.erb</h3><ul>
+<li>touch app/views/groups/show.html.erb<br>码入:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group d-flex justify-content-end mt-3 mb-3"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Edit</span>", <span class="attr">edit_group_path</span>(@<span class="attr">group</span>), <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-primary</span> <span class="attr">pull-right</span>")%&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> @<span class="attr">group.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> @<span class="attr">group.description</span> %&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li>点击讨论话题标题,预期结果如下:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ij0bxcu7j31400f8jtj.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ij0nscwgj32800p4aci.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-5"><a href="#git-存档-5" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#show"</span>
+</code></pre>
+<h2 id="实现讨论群“编辑”功能"><a href="#实现讨论群“编辑”功能" class="headerlink" title="实现讨论群“编辑”功能"></a>实现讨论群“编辑”功能</h2><h3 id="建立-edit-action"><a href="#建立-edit-action" class="headerlink" title="建立 edit action"></a>建立 edit action</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 加入 edit action<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">edit</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+<span class="keyword">end</span>
+</code></pre>
+<h3 id="建立-edit-action-的表单"><a href="#建立-edit-action-的表单" class="headerlink" title="建立 edit action 的表单"></a>建立 edit action 的表单</h3></li>
+<li><p>新增 app/views/groups/edit.html.erb</p>
+<pre><code class="bash">$ touch app/views/groups/edit.html.erb
+</code></pre>
+<p>码入: </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4 col-md-offset-4 mx-auto"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"mt-3 mb-3"</span>&gt;</span>编辑讨论版<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="name">hr</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">form_for</span> @<span class="attr">group</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+标题
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span> %&gt;</span>
+<span class="tag">&lt;<span class="name">br</span>&gt;</span>
+叙述
+<span class="tag">&lt;<span class="name">br</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_area</span> <span class="attr">:description</span> %&gt;</span>
+<span class="tag">&lt;<span class="name">br</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">:disable_with</span> =&gt;</span> 'Submiting...' %&gt;
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>点击编辑按钮(<a href="http://localhost:3000/groups/1/edit),预期结果" target="_blank" rel="noopener">http://localhost:3000/groups/1/edit),预期结果</a>:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ijr7l9sgj324a0u0goy.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-6"><a href="#git-存档-6" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#edit"</span>
+</code></pre>
+<h3 id="实现-update-action"><a href="#实现-update-action" class="headerlink" title="实现 update action"></a>实现 update action</h3><ul>
+<li>修改 app/controllers/groups_controller.rb<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">update</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+  @group.update(group_params)
+  redirect_to groups_path, <span class="symbol">notice:</span> <span class="string">"Update Success"</span>
+<span class="keyword">end</span>
+</code></pre>
+</li>
+<li>点击提交按钮,预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ik4yzdv1j327q0skae5.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ik6bfnvkj32550u0wix.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-7"><a href="#git-存档-7" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#update"</span>
+</code></pre>
+<h2 id="实现讨论群“删除”功能"><a href="#实现讨论群“删除”功能" class="headerlink" title="实现讨论群“删除”功能"></a>实现讨论群“删除”功能</h2><h3 id="建立-delete-action"><a href="#建立-delete-action" class="headerlink" title="建立 delete action"></a>建立 delete action</h3><ul>
+<li>修改 app/controllers/groups_controller.rb<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">destroy</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+  @group.destroy
+  flash[<span class="symbol">:alert</span>] = <span class="string">"Group deleted"</span>
+  redirect_to groups_path
+<span class="keyword">end</span>
+</code></pre>
+</li>
+<li>然后我们就可以对讨论话题进行删除:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikhv609jj31qj0u00zl.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9iki7bnb2j32040u078a.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-8"><a href="#git-存档-8" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement groups#destroy"</span>
+</code></pre>
+<h2 id="限制“标题为空”的Group，不能被新增"><a href="#限制“标题为空”的Group，不能被新增" class="headerlink" title="限制“标题为空”的Group，不能被新增"></a>限制“标题为空”的Group，不能被新增</h2><h3 id="在-Group-model-加入“标题限制”"><a href="#在-Group-model-加入“标题限制”" class="headerlink" title="在 Group model 加入“标题限制”"></a>在 Group model 加入“标题限制”</h3><ul>
+<li><p>修改 app/models/group.rb:</p>
+<pre><code class="rb">validates <span class="symbol">:title</span>, <span class="symbol">presence:</span> <span class="literal">true</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikonauc1j310008u417.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>这样一来，就算送出了空的表单，也不会产生任何纪录。</p>
+</li>
+</ul>
+<h3 id="在-groups-controller-里面加入储存失败的判断"><a href="#在-groups-controller-里面加入储存失败的判断" class="headerlink" title="在 groups_controller 里面加入储存失败的判断"></a>在 groups_controller 里面加入储存失败的判断</h3><ul>
+<li>我们希望在送出了空表单，使用者能够确切地知道，自己是因为什么错误被拦下:</li>
+<li><p>修改 app/controllers/groups_controller.rb, 将create action修改成如下样子:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ikw26itlj30p60i5n1g.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后修改 app/views/groups/new.html.erb, 在 form_for 下方加入以下这段代码:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> @<span class="attr">group.errors.any</span>? %&gt;</span>
+  <span class="tag">&lt;<span class="name">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">group.errors.full_messages.each</span> <span class="attr">do</span> |<span class="attr">msg</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">msg</span> %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ild7xop0j30qg0hqgqm.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>则可以产生如下效果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9il0d6al9j313w0i4jss.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-9"><a href="#git-存档-9" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add validation to title"</span>
+</code></pre>
+<h3 id="修改-edit-action"><a href="#修改-edit-action" class="headerlink" title="修改 edit action"></a>修改 edit action</h3><ul>
+<li>还有一种情况是，在修改时，提交了空白的标题。</li>
+<li>所以我们也要避免这样的情况发生:</li>
+<li>修改 app/controllers/groups_controller.rb的update action:<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">update</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+  <span class="keyword">if</span> @group.update(group_params)
+    redirect_to groups_path, <span class="symbol">notice:</span> <span class="string">"Update Success"</span>
+  <span class="keyword">else</span>
+    render <span class="symbol">:edit</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
+</li>
+<li><p>然后修改 app/views/groups/edit.html.erb, 也在 form_for 下方加入这一段代码：</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> @<span class="attr">group.errors.any</span>? %&gt;</span>
+<span class="tag">&lt;<span class="name">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> @<span class="attr">group.errors.full_messages.each</span> <span class="attr">do</span> |<span class="attr">msg</span>| %&gt;</span>
+  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">msg</span> %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ilc1t207j30n60hpdkh.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>这样，在“编辑”时，也有一样的效果。</p>
+</li>
+</ul>
+<h3 id="git-存档-10"><a href="#git-存档-10" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add validation to title apply to edit/update"</span>
+</code></pre>
+<h2 id="共用“表单”"><a href="#共用“表单”" class="headerlink" title="共用“表单”"></a>共用“表单”</h2><h3 id="产生-app-views-groups-form-html-erb"><a href="#产生-app-views-groups-form-html-erb" class="headerlink" title="产生 app/views/groups/_form.html.erb"></a>产生 app/views/groups/_form.html.erb</h3><pre><code class="bash">$ touch app/views/groups/_form.html.erb
+</code></pre>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">form_for</span> @<span class="attr">group</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> @<span class="attr">group.errors.any</span>? %&gt;</span>
+  <span class="tag">&lt;<span class="name">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">group.errors.full_messages.each</span> <span class="attr">do</span> |<span class="attr">msg</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">msg</span> %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  标题
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span> %&gt;</span>
+  <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+  叙述
+  <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_area</span> <span class="attr">:description</span> %&gt;</span>
+  <span class="tag">&lt;<span class="name">br</span>&gt;</span>
+
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">:disable_with</span> =&gt;</span> 'Submiting...' %&gt;
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+<h3 id="修改-app-views-groups-new-html-erb"><a href="#修改-app-views-groups-new-html-erb" class="headerlink" title="修改 app/views/groups/new.html.erb"></a>修改 app/views/groups/new.html.erb</h3><ul>
+<li>修改 app/views/groups/new.html.erb，把原先重复的表单代码“整段删掉”，改成 &lt;%= render “form” %&gt;</li>
+</ul>
+<h3 id="修改-app-views-groups-edit-html-erb"><a href="#修改-app-views-groups-edit-html-erb" class="headerlink" title="修改 app/views/groups/edit.html.erb"></a>修改 app/views/groups/edit.html.erb</h3><ul>
+<li>修改 app/views/groups/edit.html.erb，把原先重复的表单源代码“整段删掉”，改成 &lt;%= render “form” %&gt;</li>
+</ul>
+<h3 id="git-存档-11"><a href="#git-存档-11" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"move form to partial"</span>
+</code></pre>
+<h2 id="将表单换为-Bootstrap-提供的版型"><a href="#将表单换为-Bootstrap-提供的版型" class="headerlink" title="将表单换为 Bootstrap 提供的版型"></a>将表单换为 Bootstrap 提供的版型</h2><h3 id="修改-app-views-groups-form-html-erb"><a href="#修改-app-views-groups-form-html-erb" class="headerlink" title="修改 app/views/groups/_form.html.erb"></a>修改 app/views/groups/_form.html.erb</h3><ul>
+<li>修改 app/views/groups/_form.html.erb，换成以下内容:<pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">form_for</span> @<span class="attr">group</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group string optional"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.label</span> "<span class="attr">title</span>", <span class="attr">:class</span> =&gt;</span> "string optional control-label" %&gt;
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span>, <span class="attr">:class</span> =&gt;</span> "string optional form-control" %&gt;
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group string optional"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.label</span> "<span class="attr">description</span>", <span class="attr">:class</span> =&gt;</span> "string optional control-label" %&gt;
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_area</span> <span class="attr">:description</span>, <span class="attr">:class</span> =&gt;</span> "string optional form-control" %&gt;
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-primary</span>", <span class="attr">data:</span> { <span class="attr">disable_with:</span> "<span class="attr">Submiting...</span>" } %&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+</li>
+<li>此时,我们的表单样式就可以变成如下样子(<a href="http://localhost:3000/groups/new)" target="_blank" rel="noopener">http://localhost:3000/groups/new)</a>:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9j91458h1j31xk0u0q63.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-12"><a href="#git-存档-12" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"style form with bootstrap"</span>
+</code></pre>
+<h3 id="使用-SimpleForm-简化"><a href="#使用-SimpleForm-简化" class="headerlink" title="使用 SimpleForm 简化"></a>使用 SimpleForm 简化</h3><ul>
+<li>在这张新的表单 HTML 中，我们见到很啰唆的语句:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group string optional"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.label</span> "<span class="attr">title</span>", <span class="attr">:class</span> =&gt;</span> "string optional control-label" %&gt;
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span>, <span class="attr">:class</span> =&gt;</span> "string optional form-control" %&gt;
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li>然后每一个栏位，都必须要用 bootstrap 指定的样式，重新装潢。但是如此一来，要是在栏位很多时，要写的 HTML 就要写上不少。有没有方法可以简化呢？<br>这边我们要介绍一个 gem 叫做 simple_form，它可以帮你简化复杂的表单这件事。<br>首先我们要来安装 simple_form<br>打开 Gemfile，然后新增一行 gem ‘simple_form’</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9ja5nbj19j31fm0u019f.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>然后执行<pre><code class="bash">$ bundle install
+</code></pre>
+</li>
+<li>安装 gem</li>
+</ul>
+<h3 id="安装-simple-form-for-bootstrap-的设定"><a href="#安装-simple-form-for-bootstrap-的设定" class="headerlink" title="安装 simple_form for bootstrap 的设定"></a>安装 simple_form for bootstrap 的设定</h3><ul>
+<li><p>执行:</p>
+<pre><code class="bash">$ rails generate simple_form:install --bootstrap
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jabqn2knj31ze0qikbv.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>这个指令会产生两个文件<br>config/initializers/simple_form.rb<br>config/initializers/simple_form_bootstrap.rb （这个是 Bootstrap 表单的”布景”)</p>
+</li>
+<li>然后重新打开rails server (按 ctrl＋c 终止 rails server， 再运行 rails s)</li>
+</ul>
+<h3 id="修改-app-views-groups-form-html-erb-1"><a href="#修改-app-views-groups-form-html-erb-1" class="headerlink" title="修改 app/views/groups/_form.html.erb"></a>修改 app/views/groups/_form.html.erb</h3><ul>
+<li>把内容修改为:<pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">simple_form_for</span> @<span class="attr">group</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.input</span> <span class="attr">:title</span>, <span class="attr">input_html:</span> { <span class="attr">class:</span> "<span class="attr">form-control</span>"} %&gt;</span>
+    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.input</span> <span class="attr">:description</span>, <span class="attr">input_html:</span> { <span class="attr">class:</span> "<span class="attr">form-control</span>"} %&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-primary</span>", <span class="attr">data:</span> { <span class="attr">disable_with:</span> "<span class="attr">Submiting...</span>" } %&gt;</span>
+<span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+</li>
+<li>然后再打开<a href="http://localhost:3000/groups/new,点击提交空表单,就可以看到如下样式" target="_blank" rel="noopener">http://localhost:3000/groups/new,点击提交空表单,就可以看到如下样式</a>:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaj7swqej31wh0u0whu.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-13"><a href="#git-存档-13" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"replace form with simple_form bootstrap template"</span>
+</code></pre>
+<!-- # 加入使用者功能 # -->
+<h2 id="安装-devise-gem"><a href="#安装-devise-gem" class="headerlink" title="安装 devise gem"></a>安装 devise gem</h2><pre><code class="bash">$ git checkout -b abby04
+</code></pre>
+<h3 id="安装登录系统"><a href="#安装登录系统" class="headerlink" title="安装登录系统"></a>安装登录系统</h3><ul>
+<li><p>Devise 是一个 Rails 内热门的 gem，专门用来快速实作“登录系统”。在这一章我们会用 devise 实作登录功能。<br>Gemfile 新增一行 gem ‘devise’<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jas0d5hxj30rg0hvdna.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后执行:</p>
+<pre><code class="bash">$ bundle install
+</code></pre>
+</li>
+</ul>
+<h3 id="产生会员系统的必要文件"><a href="#产生会员系统的必要文件" class="headerlink" title="产生会员系统的必要文件"></a>产生会员系统的必要文件</h3><ul>
+<li><p>执行:</p>
+<pre><code class="bash">$ rails g devise:install
+$ rails g devise user
+$ rake db:migrate
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaz11evxj31zo07mdi0.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jaz943wmj31zm0cs0vw.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>重新打开 rails server</p>
+</li>
+</ul>
+<h3 id="在-groups-controller-限制-“新增讨论群”必须先登录"><a href="#在-groups-controller-限制-“新增讨论群”必须先登录" class="headerlink" title="在 groups_controller 限制 “新增讨论群”必须先登录"></a>在 groups_controller 限制 “新增讨论群”必须先登录</h3><ul>
+<li><p>在 app/controllers/groups_controller.rb 加入一行 before_action :authenticate_user! , only: [:new]</p>
+<pre><code class="rb">before_action <span class="symbol">:authenticate_user!</span> , <span class="symbol">only:</span> [<span class="symbol">:new</span>]
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jb4vbintj31020eajv6.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后这时候当你要访问 <a href="http://localhost:3000/groups/new" target="_blank" rel="noopener">http://localhost:3000/groups/new</a> 时，就会出现“登录画面”阻挡。可以注册一个账户试试效果。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jb63bcmdj32040u0gp2.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-14"><a href="#git-存档-14" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"install devise"</span>
+</code></pre>
+<h2 id="让这个网站有实际“登录”、“退出”的功能"><a href="#让这个网站有实际“登录”、“退出”的功能" class="headerlink" title="让这个网站有实际“登录”、“退出”的功能"></a>让这个网站有实际“登录”、“退出”的功能</h2><h3 id="修改-app-views-common-navbar-html-erb"><a href="#修改-app-views-common-navbar-html-erb" class="headerlink" title="修改 app/views/common/_navbar.html.erb"></a>修改 app/views/common/_navbar.html.erb</h3><pre><code class="html">- <span class="tag">&lt;<span class="name">li</span>&gt;</span> 
+-   <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("登录", '#') %&gt;</span>   
+- <span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> !<span class="attr">current_user</span> %&gt;</span>
+    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("注册", <span class="attr">new_user_registration_path</span>, <span class="attr">class:</span> "<span class="attr">nav-link</span>") %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("登录", <span class="attr">new_user_session_path</span>, <span class="attr">class:</span> "<span class="attr">nav-link</span>") %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">else</span> %&gt;</span>
+    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"dropdown-toggle nav-link"</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span>&gt;</span>
+        Hi!, <span class="tag">&lt;<span class="name">%=</span> <span class="attr">current_user.email</span> %&gt;</span>
+        <span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">"caret"</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span> <span class="attr">style</span>=<span class="string">"width: 100%;"</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">li</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("退出", <span class="attr">destroy_user_session_path</span>, <span class="attr">method:</span> <span class="attr">:delete</span>, <span class="attr">class:</span> "<span class="attr">nav-link</span>") %&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+<ul>
+<li>预期结果如下:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jbt2xt20j31y50u0q7f.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jby3rq7kj31400j6q4g.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-15"><a href="#git-存档-15" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"user can login/logout/signup"</span>
+</code></pre>
+<h2 id="让“群组”与“使用者”产生关联"><a href="#让“群组”与“使用者”产生关联" class="headerlink" title="让“群组”与“使用者”产生关联"></a>让“群组”与“使用者”产生关联</h2><h3 id="新增-user-id-到-group-的-table-里"><a href="#新增-user-id-到-group-的-table-里" class="headerlink" title="新增 user_id 到 group 的 table 里"></a>新增 user_id 到 group 的 table 里</h3><ul>
+<li>执行:<pre><code class="bash">$ rails g migration add_user_id_to_group
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jc61hsgpj31z205ytfd.jpg" width="100%" style="margin:0;"></li>
+<li><p>然后打开刚刚新增的 migration 档(db/migrate/一串数字_add_user_id_to_group),码入:</p>
+<pre><code class="rb">add_column <span class="symbol">:groups</span>, <span class="symbol">:user_id</span>, <span class="symbol">:integer</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jceuu3c1j310007adhz.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后执行:</p>
+<pre><code class="bash">$ rake db:migrate
+</code></pre>
+</li>
+</ul>
+<h3 id="连结-user-与-group-的双向关系"><a href="#连结-user-与-group-的双向关系" class="headerlink" title="连结 user 与 group 的双向关系"></a>连结 user 与 group 的双向关系</h3><ul>
+<li><p>修改 app/models/user.rb 加入 has_many :groups:</p>
+<pre><code class="rb">has_many <span class="symbol">:groups</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jck9snhlj31020ektep.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改 app/models/group.rb 加入 belongs_to :user:</p>
+<pre><code class="rb">belongs_to <span class="symbol">:user</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcm9dxvij30vs0co0vv.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="在新增看板时，记录谁是群组的建立者"><a href="#在新增看板时，记录谁是群组的建立者" class="headerlink" title="在新增看板时，记录谁是群组的建立者"></a>在新增看板时，记录谁是群组的建立者</h3><ul>
+<li><p>修改 app/controllers/groups_controller.rb，在需要“登入验证”的 action 列表再加入 create:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcoxw9taj31000bcn13.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改 app/controllers/groups_controller.rb，在 create 中，多加入一行 @group.user = current_user:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcrr4i54j30lk0hvq74.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-16"><a href="#git-存档-16" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add user_id to group"</span>
+</code></pre>
+<h3 id="修改-group-列表，将-user-的名字列上去"><a href="#修改-group-列表，将-user-的名字列上去" class="headerlink" title="修改 group 列表，将 user 的名字列上去"></a>修改 group 列表，将 user 的名字列上去</h3><ul>
+<li>修改 app/views/groups/index.html.erb 然后把 Creator 的信息加进去:<br><code>`</code> html </li>
+</ul>
+<ul>
+<li><td>Creator</td></li>
+<li><td>&lt;%= group.user.email %&gt;</td><br><code>`</code><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jcxpf400j30pu0mlgtf.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<ul>
+<li><p>这是时候我们打开首页(<a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a>) 会发现，首页怎么爆炸了 !~<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd0bsfycj31va0u0agz.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>这是因为我们之前创造的“群组”都是“无主”的。只要把这些“无主”的群组，通通删掉就行了。既然我们也进不去首页删群组了，我们就从 console 删吧。</p>
+</li>
+</ul>
+<h3 id="删除所有“无主”的群组"><a href="#删除所有“无主”的群组" class="headerlink" title="删除所有“无主”的群组"></a>删除所有“无主”的群组</h3><ul>
+<li><p>执行: </p>
+<pre><code class="bash">$ rails console
+$ Group.delete_all
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd2wt5rsj31fe0bmwle.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>输入 exit 退出 console</p>
+</li>
+<li><p>然后再打开 <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a> 就正常了.<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd49eac5j327w0te0vg.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>这时候我们再新增一笔数据，就会显示 creator 的信息了。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jd95ggsbj32800ns41r.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-17"><a href="#git-存档-17" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"show group's creator info"</span>
+</code></pre>
+<h2 id="只有群组的“创始者”可以“编辑”“删除”群组资讯"><a href="#只有群组的“创始者”可以“编辑”“删除”群组资讯" class="headerlink" title="只有群组的“创始者”可以“编辑”“删除”群组资讯"></a>只有群组的“创始者”可以“编辑”“删除”群组资讯</h2><h3 id="路人不应该可以看到“编辑”“删除”按钮"><a href="#路人不应该可以看到“编辑”“删除”按钮" class="headerlink" title="路人不应该可以看到“编辑”“删除”按钮"></a>路人不应该可以看到“编辑”“删除”按钮</h3><ul>
+<li><p>让我们退出系统，在这里我们察觉一个严重的问题：明明是路人，怎么能看到”编辑”、”删除”按钮的资讯呢？<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdgovhbyj31yh0u0agj.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>所以在这里我们要把“编辑”“删除”这两个按钮藏起来，限定<br>只有登入模式下<br>而且还必须是群组“创始者”<br>才能看得到这个两个按钮，否则路人是看不到的。</p>
+</li>
+<li><p>修改 app/views/groups/index.html.erb<br>加入 &lt;% if current_user &amp;&amp; current_user == group.user %&gt; 的判断式</p>
+<pre><code class="html">+ <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> <span class="attr">current_user</span> &amp;&amp; <span class="attr">current_user</span> == <span class="string">group.user</span> %&gt;</span>
++ <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+</code></pre>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdrpy9zej30qy0m3ai2.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>重新刷新首页，路人现在就看不到按钮了<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jdurpv2aj32800notbm.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-18"><a href="#git-存档-18" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"people can't see edit button unless he is group owner"</span>
+</code></pre>
+<h3 id="路人不应该也可以“直接输入网址”去存取-edit-update-destroy-action"><a href="#路人不应该也可以“直接输入网址”去存取-edit-update-destroy-action" class="headerlink" title="路人不应该也可以“直接输入网址”去存取 edit / update / destroy action"></a>路人不应该也可以“直接输入网址”去存取 edit / update / destroy action</h3><ul>
+<li><p>除了将按钮对路人隐藏外，我们还要考虑到一个情形，假设这个路人是知道 Rails 规则的，那么他可能输入:<br><a href="http://localhost:3000/groups/某笔数据的ID/edit" target="_blank" rel="noopener">http://localhost:3000/groups/某笔数据的ID/edit</a><br>网址，就直接可以编辑数据。<br>我们也要在 controller 做权限判断，滤掉这种人。<br>首先，我们先限定 edit / update / destroy 这三个操作动作，必须要是“登入”的使用者才能存取。</p>
+</li>
+<li><p>修改 app/controllers/groups_controller.rb 在 before_action :authenticate_user! 列表中，加入 :edit, :update, :destroy</p>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je0qs1d8j31030aijv1.jpg" width="100%" style="margin:0;"></p>
+<p>这样“没登录”的路人，就进不来了。但这只是第一步。</p>
+<h3 id="必须要是-group-拥有人，才能进入-edit，否则会被重导至首页，并显示错误信息"><a href="#必须要是-group-拥有人，才能进入-edit，否则会被重导至首页，并显示错误信息" class="headerlink" title="必须要是 group 拥有人，才能进入 edit，否则会被重导至首页，并显示错误信息"></a>必须要是 group 拥有人，才能进入 edit，否则会被重导至首页，并显示错误信息</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 加入权限，如果不是”创始者”去存取，会显示没有权限的错误信息:<pre><code class="rb"><span class="keyword">if</span> current_user != @group.user
+  redirect_to root_path, <span class="symbol">alert:</span> <span class="string">"You have no permission."</span>
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je4q57j8j30ms0hq436.jpg" width="100%" style="margin:0;"><br>这样当其他人，试图输入:<br><a href="http://localhost:3000/groups/某笔数据的ID/edit" target="_blank" rel="noopener">http://localhost:3000/groups/某笔数据的ID/edit</a><br>这样的网址，想要编辑数据，就会被挡住。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9je7y26axj32800rqtcc.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="依样画葫芦的把“权限检查”的代码，套用到-update-destroy-上"><a href="#依样画葫芦的把“权限检查”的代码，套用到-update-destroy-上" class="headerlink" title="依样画葫芦的把“权限检查”的代码，套用到 update / destroy 上"></a>依样画葫芦的把“权限检查”的代码，套用到 update / destroy 上</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 中的 update 与 destroy 部分:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jebut1moj30jm0mkq8q.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-19"><a href="#git-存档-19" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"check owner permission when access edit/update/destroy"</span>
+</code></pre>
+<h3 id="制作-find-group-and-check-permission"><a href="#制作-find-group-and-check-permission" class="headerlink" title="制作 find_group_and_check_permission"></a>制作 find_group_and_check_permission</h3><ul>
+<li>我们发现 edit、update、destroy 这三个 action 都有一样的代码，看起来有点冗<pre><code class="rb">@group = Group.find(params[<span class="symbol">:id</span>])
+<span class="keyword">if</span> current_user != @group.user
+redirect_to root_path, <span class="symbol">alert:</span> <span class="string">"You have no permission."</span>
+<span class="keyword">end</span>
+</code></pre>
+其实我们可以透过把它包装成一个函式的方式 find_group_and_check_permission 去省略这段冗余代码。</li>
+</ul>
+<p>打开app/controllers/groups_controller.rb,在private下,新增一个find_group_and_check_permission:</p>
+<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">find_group_and_check_permission</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+
+  <span class="keyword">if</span> current_user != @group.user
+    redirect_to root_path, <span class="symbol">alert:</span> <span class="string">"You have no permission."</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jh1y56zrj30mw0ljgqa.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>再修正 edit、update、destroy:<pre><code class="rb">find_group_and_check_permission
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhfjfwfoj30io0iqwih.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="把-find-group-and-check-permission-挂到-before-action"><a href="#把-find-group-and-check-permission-挂到-before-action" class="headerlink" title="把 find_group_and_check_permission 挂到 before_action"></a>把 find_group_and_check_permission 挂到 before_action</h3><p>开发到这里你会发现一件事，find_group_and_check_permission 其实都是在这三个 action 的最前面开头执行的，所以你甚至可以这样写，把 find_group_and_check_permission 挂到 before_action,然后再把 edit update destroy 里的 find_group_and_check_permission 砍掉。变成这样：</p>
+<pre><code class="rb">before_action <span class="symbol">:find_group_and_check_permission</span>, <span class="symbol">only:</span> [<span class="symbol">:edit</span>, <span class="symbol">:update</span>, <span class="symbol">:destroy</span>]
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhjvswwnj30ng0mk44t.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-20"><a href="#git-存档-20" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"use before_action to find_group_and_check_permission"</span>
+</code></pre>
+<h3 id="修掉-show-里面的-Edit-按钮"><a href="#修掉-show-里面的-Edit-按钮" class="headerlink" title="修掉 show 里面的 Edit 按钮"></a>修掉 show 里面的 Edit 按钮</h3><p>做到这里，我们还发现一个地方，我们漏了改，那就是 show.html.erb 上面，还有一个 Edit 按钮我们还没有拔掉。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhp9b02tj31400dk75i.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>修改 app/views/groups/show.html.erb ,加入&lt;% if current_user &amp;&amp; current_user == @group.user %&gt;的判断式:<br><code>`</code> html </li>
+</ul>
+<ul>
+<li>&lt;% if current_user &amp;&amp; current_user == @group.user %&gt;</li>
+<li>&lt;% end %&gt;<br><code>`</code><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jhu4h5fgj31020dc0yy.jpg" width="100%" style="margin:0;"><br>这样按钮就被修掉了。</li>
+</ul>
+<h3 id="git-存档-21"><a href="#git-存档-21" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add permission check on show page"</span>
+</code></pre>
+<!-- # 在讨论群里面"发表文章" # -->
+<h2 id="建立文章的架构"><a href="#建立文章的架构" class="headerlink" title="建立文章的架构"></a>建立文章的架构</h2><pre><code class="bash">$ git checkout -b abby05
+</code></pre>
+<h3 id="设计-Post-的-model-架构"><a href="#设计-Post-的-model-架构" class="headerlink" title="设计 Post 的 model 架构"></a>设计 Post 的 model 架构</h3><ul>
+<li>文章内容要有“内容”、“所属讨论群组”、“叙述”<br>我们在这里要建立一个 model Post，并建立数据表 post 的三个栏位: content ( text 文字属性) 、group_id (integer 数字属性)、 user_id ( integer 数字属性）<pre><code class="bash">$ rails g model post content:text group_id:<span class="built_in">integer</span> user_id:<span class="built_in">integer</span>
+</code></pre>
+</li>
+<li>将数据库建立起来，并执行 rake db:migrate<pre><code class="bash">$ rake db:migrate
+</code></pre>
+<h3 id="建立-Group-Post-User-三者间的关系"><a href="#建立-Group-Post-User-三者间的关系" class="headerlink" title="建立 Group / Post / User 三者间的关系"></a>建立 Group / Post / User 三者间的关系</h3><pre><code class="rb">has_many <span class="symbol">:posts</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jierw3sbj30sc0bedj5.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<pre><code class="rb">has_many <span class="symbol">:posts</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jifwcbtgj31000ew0zv.jpg" width="100%" style="margin:0;"></p>
+<pre><code class="rb">belongs_to <span class="symbol">:user</span>
+belongs_to <span class="symbol">:group</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jigvqfppj30ju090taq.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-22"><a href="#git-存档-22" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add post and hook group/user relation"</span>
+</code></pre>
+<h3 id="建立-Post-Controller"><a href="#建立-Post-Controller" class="headerlink" title="建立 Post Controller"></a>建立 Post Controller</h3><pre><code class="bash">$ rails g controller posts 
+</code></pre>
+<h3 id="设立-routing"><a href="#设立-routing" class="headerlink" title="设立 routing"></a>设立 routing</h3><ul>
+<li><p>修改 config/routes.rb,将 resources :posts 加入 resources :groups 内:</p>
+<pre><code class="rb">resources <span class="symbol">:groups</span> <span class="keyword">do</span>
+  resources <span class="symbol">:posts</span>
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jitjexw1j31000asq6t.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后执行:</p>
+<pre><code class="bash">$ rake routes
+</code></pre>
+</li>
+</ul>
+<h3 id="git-存档-23"><a href="#git-存档-23" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add posts nested route"</span>
+</code></pre>
+<h3 id="在-groups-show-新增-“发表文章”-按钮"><a href="#在-groups-show-新增-“发表文章”-按钮" class="headerlink" title="在 groups#show 新增 “发表文章” 按钮"></a>在 groups#show 新增 “发表文章” 按钮</h3><ul>
+<li><p>修改 app/views/groups/show.html.erb</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Write</span> <span class="attr">a</span> <span class="attr">Post</span>", <span class="attr">new_group_post_path</span>(@<span class="attr">group</span>), <span class="attr">class:</span> "<span class="attr">mr-3</span> <span class="attr">btn</span> <span class="attr">btn-info</span> <span class="attr">pull-right</span>")%&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jj5bireij31000cqdm9.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>预期结果如下:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jj7tx34uj31uk0u00w7.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-24"><a href="#git-存档-24" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add post button"</span>
+</code></pre>
+<h2 id="实际发表文章"><a href="#实际发表文章" class="headerlink" title="实际发表文章"></a>实际发表文章</h2><h3 id="实现-new-create-action"><a href="#实现-new-create-action" class="headerlink" title="实现 new / create action"></a>实现 new / create action</h3><ul>
+<li><p>新增 new 与 create action 在 posts_controller</p>
+<pre><code class="rb">before_action <span class="symbol">:authenticate_user!</span>, <span class="symbol">:only</span> =&gt; [<span class="symbol">:new</span>, <span class="symbol">:create</span>]
+
+<span class="function"><span class="keyword">def</span> <span class="title">new</span></span>
+  @group = Group.find(params[<span class="symbol">:group_id</span>])
+  @post = Post.new
+<span class="keyword">end</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">create</span></span>
+  @group = Group.find(params[<span class="symbol">:group_id</span>])
+  @post = Post.new(post_params)
+  @post.group = @group
+  @post.user = current_user
+
+  <span class="keyword">if</span> @post.save
+    redirect_to group_path(@group)
+  <span class="keyword">else</span>
+    render <span class="symbol">:new</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+private
+
+<span class="function"><span class="keyword">def</span> <span class="title">post_params</span></span>
+  params.<span class="keyword">require</span>(<span class="symbol">:post</span>).permit(<span class="symbol">:content</span>)
+<span class="keyword">end</span> 
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjgmkaxfj30la0ko43o.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="新增-app-views-posts-new-html-erb"><a href="#新增-app-views-posts-new-html-erb" class="headerlink" title="新增 app/views/posts/new.html.erb"></a>新增 app/views/posts/new.html.erb</h3><pre><code class="bash">$ touch app/views/posts/new.html.erb
+</code></pre>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span>新增文章<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4 col-md-offset-4"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">simple_form_for</span> [@<span class="attr">group</span>,@<span class="attr">post</span>] <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.input</span> <span class="attr">:content</span>, <span class="attr">input_html:</span> { <span class="attr">class:</span> "<span class="attr">form-control</span>"} %&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-actions"</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> "<span class="attr">Submit</span>", <span class="attr">disable_with:</span> "<span class="attr">Submiting...</span>", <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-primary</span>"%&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h3 id="修改-groups-controller-中的-show-action"><a href="#修改-groups-controller-中的-show-action" class="headerlink" title="修改 groups_controller 中的 show action"></a>修改 groups_controller 中的 show action</h3><ul>
+<li>修改 app/controllers/groups_controller.rb<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">show</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+  @posts = @group.posts
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjnwe0frj30q20hpdl5.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="修改-groups-show-html-erb"><a href="#修改-groups-show-html-erb" class="headerlink" title="修改 groups/show.html.erb"></a>修改 groups/show.html.erb</h3><ul>
+<li>我们要修改 app/views/groups/show.html.erb，让文章能够显示出来<br>在&lt;%= @group.description %&gt;下，我们多加了一个表格做这件事:<pre><code class="html"><span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">thead</span>&gt;</span>
+   <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span>文章内容<span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span>发表者<span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span>发表时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">posts.each</span> <span class="attr">do</span> |<span class="attr">post</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.content</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.user.email</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.created_at</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">table</span>&gt;</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjuxryy7j30q00la45f.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>新增文章,预期结果如下:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jjyb6tvdj32800sutcn.jpg" width="100%" style="margin:0;"></p>
+<h3 id="对-Post-加上-validation"><a href="#对-Post-加上-validation" class="headerlink" title="对 Post 加上 validation"></a>对 Post 加上 validation</h3><p>这时候我们发现，刚刚有文章不小心没填内容，就发出去变成空的。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk0i697bj31400gamzg.jpg" width="100%" style="margin:0;"></p>
+<p>为了防止这样的情形，我们还是要限制 post 的 content 要是为空，就不得送出。</p>
+<ul>
+<li>修改 app/models/post.rb 加入 validates :content, presence: true:<pre><code class="rb">validates <span class="symbol">:content</span>, <span class="symbol">presence:</span> <span class="literal">true</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk34i5qgj30yc0c00w5.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>之后要是再有使用者，送出空的内容，就会被挡下来。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk41a98vj327y0tatbp.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-25"><a href="#git-存档-25" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement post create function"</span>
+</code></pre>
+<h2 id="文章应该按照发表时间倒序排列"><a href="#文章应该按照发表时间倒序排列" class="headerlink" title="文章应该按照发表时间倒序排列"></a>文章应该按照发表时间倒序排列</h2><h3 id="修改-groups-controller"><a href="#修改-groups-controller" class="headerlink" title="修改 groups_controller"></a>修改 groups_controller</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 的 show：<pre><code class="rb">@posts = @group.posts.order(<span class="string">"created_at DESC"</span>)
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk8syjwuj30ta0hqn1x.jpg" width="100%" style="margin:0;"><br>重新刷新，看板列表就会变成，按照发表时间“倒序”排列:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jkbgu01rj313y0i8juw.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-26"><a href="#git-存档-26" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"add order by created_at to group's post"</span>
+</code></pre>
+<h3 id="使用-scope-替代直接-order"><a href="#使用-scope-替代直接-order" class="headerlink" title="使用 scope 替代直接 order"></a>使用 scope 替代直接 order</h3><p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jk8syjwuj30ta0hqn1x.jpg" width="100%" style="margin:0;"><br>这里的 order(“created_at DESC”) 是“程序语句”，但不是“功能叙述”。我们作为旁观者，只能猜测这是要按照“最近的时序排列”。<br>如果能改成 @group.posts.recent 可能在维护性上更直观。<br>这里我们还可以用 Rails 里面的一个内建 API scope 让代码更直观一些。 scope 可以用来包装一些查询式，如果我们这里想要让最后的代码变成 @group.posts.recent 的话，作法如下：</p>
+<ul>
+<li><p>修改 app/models/post.rb，加入一行 scope :recent, -&gt; { order(“created_at DESC”)}</p>
+<pre><code class="rb">scope <span class="symbol">:recent</span>, -&gt; { order(<span class="string">"created_at DESC"</span>)}
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jkhytsh3j30z60d6wiy.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后修改 app/controllers/groups_controller.rb 中的 show:</p>
+<pre><code class="rb">@posts = @group.posts.recent
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jlbk04mvj30u20hp0x0.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-27"><a href="#git-存档-27" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"using scope to write order by created_at to group's post"</span>
+</code></pre>
+<h2 id="加入文章分页功能"><a href="#加入文章分页功能" class="headerlink" title="加入文章分页功能"></a>加入文章分页功能</h2><h3 id="安装-will-paginate"><a href="#安装-will-paginate" class="headerlink" title="安装 will_paginate"></a>安装 will_paginate</h3><p>Rails 社群内有很多“分页”功能的 gem 可以办到这件事，其中最热门的 gem 叫 will_paginate，使用这些 gem ，一下子就会把功能做完了。</p>
+<ul>
+<li>修改 Gemfile，加入 will_paginate<br>gem ‘will_paginate’</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jln8nbwfj30mi0hpq8r.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>然后执行:<pre><code class="bash">$ bundle install
+</code></pre>
+然后重开 rails server</li>
+</ul>
+<h3 id="修改-groups-controller-1"><a href="#修改-groups-controller-1" class="headerlink" title="修改 groups_controller"></a>修改 groups_controller</h3><ul>
+<li>修改 app/controllers/groups_controller.rb 中的 show,加入分页代码，变成:<pre><code class="rb">@posts = @group.posts.recent.paginate(<span class="symbol">:page</span> =&gt; params[<span class="symbol">:page</span>], <span class="symbol">:per_page</span> =&gt; <span class="number">5</span>)
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jlwjjp9nj30qu0hqjwz.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="修改-groups-show-html-erb-1"><a href="#修改-groups-show-html-erb-1" class="headerlink" title="修改 groups/show.html.erb"></a>修改 groups/show.html.erb</h3><ul>
+<li>修改 app/views/groups/show.html.erb 在最下面  下加入以下三行代码:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">%=</span> <span class="attr">will_paginate</span> @<span class="attr">posts</span>, <span class="attr">class:</span>"<span class="attr">ml-5</span> <span class="attr">mr-5</span>" %&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jm4u24wij30rq0l2tfi.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>如果群组内，超过 5 篇文章（现在就去新增！！），就可以看到分页功能出现了。<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jm83azbaj31lj0u0jyg.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-28"><a href="#git-存档-28" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement posts pagination with will_paginate"</span>
+</code></pre>
+<h2 id="建立“群成员”数据表"><a href="#建立“群成员”数据表" class="headerlink" title="建立“群成员”数据表"></a>建立“群成员”数据表</h2><pre><code class="bash">$ git checkout -b abby06
+</code></pre>
+<h3 id="建立-GroupRelationship"><a href="#建立-GroupRelationship" class="headerlink" title="建立 GroupRelationship"></a>建立 GroupRelationship</h3><p>我们在这里要建立一个新的 model 叫 GroupRelationship。这个数据表里面只有两个栏位：<br>group_id ( integer )<br>user_id ( integer)<br>记录了“谁”参加了”哪个群组”</p>
+<ul>
+<li>执行:<pre><code class="bash">$ rails g model group_relationship group_id:<span class="built_in">integer</span> user_id:<span class="built_in">integer</span>
+$ rake db:migrate
+</code></pre>
+</li>
+</ul>
+<h3 id="设定-Group-与-User-之间的关系-使用者参与的所有群"><a href="#设定-Group-与-User-之间的关系-使用者参与的所有群" class="headerlink" title="设定 Group 与 User 之间的关系 (使用者参与的所有群)"></a>设定 Group 与 User 之间的关系 (使用者参与的所有群)</h3><p>在这之前，在 User model(app/models/user.rb) 已经有一行：has_many :groups<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jck9snhlj31020ektep.jpg" width="100%" style="margin:0;"></p>
+<p>user.groups 会捞出这个使用者“创造过的所有群”。那我们要如何撰写 “参与的所有群”呢？</p>
+<ul>
+<li><p>首先，修改 app/models/user.rb 加入以下两行:</p>
+<pre><code class="rb">has_many <span class="symbol">:group_relationships</span>
+has_many <span class="symbol">:participated_groups</span>, <span class="symbol">:through</span> =&gt; <span class="symbol">:group_relationships</span>, <span class="symbol">:source</span> =&gt; <span class="symbol">:group</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmnrl9mnj31000ea45o.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>然后修改 app/models/group_relationship.rb，加入这两行:</p>
+<pre><code class="rb">belongs_to <span class="symbol">:group</span>
+belongs_to <span class="symbol">:user</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmr2w1c9j310408cgo6.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<p>这样当捞 user.participated_groups 时，就会捞出“参与的所有群”。</p>
+<h3 id="设定-Group-与-User-之间的关系-群组内的所有会员"><a href="#设定-Group-与-User-之间的关系-群组内的所有会员" class="headerlink" title="设定 Group 与 User 之间的关系 (群组内的所有会员)"></a>设定 Group 与 User 之间的关系 (群组内的所有会员)</h3><ul>
+<li>修改 app/models/group.rb，加入这两行:<pre><code class="rb">has_many <span class="symbol">:group_relationships</span>
+has_many <span class="symbol">:members</span>, <span class="symbol">through:</span> <span class="symbol">:group_relationships</span>, <span class="symbol">source:</span> <span class="symbol">:user</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jmwfzg4oj31020cgjw3.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="动手测看看"><a href="#动手测看看" class="headerlink" title="动手测看看"></a>动手测看看</h3><p>打开 rails console</p>
+<ul>
+<li>执行:<pre><code class="bash">$ u = User.first
+$ g = Group.first
+$ g.members &lt;&lt; u
+$ g.members
+$ u.participated_groups
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jn40svp0j31ao0u0kjl.jpg" width="100%" style="margin:0;"><br>看看会出现什么结果<br>最后执行exit退出</li>
+</ul>
+<h3 id="git-存档-29"><a href="#git-存档-29" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement group relation"</span>
+</code></pre>
+<h2 id="实现在群组里面判断-“是否群组成员”"><a href="#实现在群组里面判断-“是否群组成员”" class="headerlink" title="实现在群组里面判断 “是否群组成员”"></a>实现在群组里面判断 “是否群组成员”</h2><h3 id="在-user-model-内实现判断式”是否为群组的一分子”"><a href="#在-user-model-内实现判断式”是否为群组的一分子”" class="headerlink" title="在 user model 内实现判断式”是否为群组的一分子”"></a>在 user model 内实现判断式”是否为群组的一分子”</h3><ul>
+<li>让我们修改 app/models/user.rb ，在最后一个end的上面加入这一段 is_member_of?(group)<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">is_member_of?</span><span class="params">(group)</span></span>
+  participated_groups.<span class="keyword">include</span>?(group)
+<span class="keyword">end</span>
+</code></pre>
+然后重开rails console</li>
+<li>执行:<pre><code class="bash">$ u = User.first
+$ g = Group.first
+$ u.is_member_of?(g)
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnhqd8apj31020fudsj.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>运行 exit 退出console<br>我们等一下将会使用 is_member_of?(group)来判断”这个使用者是否属于该群组”</p>
+<h3 id="修改-groups-show-html-erb-2"><a href="#修改-groups-show-html-erb-2" class="headerlink" title="修改 groups/show.html.erb"></a>修改 groups/show.html.erb</h3><ul>
+<li><p>我们在 app/views/groups/show.html.erb 加入这一段:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"pull-right"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> <span class="attr">current_user</span> &amp;&amp; <span class="attr">current_user.is_member_of</span>?(@<span class="attr">group</span>) %&gt;</span>
+    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-success mr-3"</span>&gt;</span>群组成员<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">else</span> %&gt;</span>
+    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-warning mr-3"</span>&gt;</span>不是群组成员<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+<span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnqb6v6wj30t60hvgtg.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>此时预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jnrihutfj31nx0u0n49.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jns41sejj31lx0u0gss.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="git-存档-30"><a href="#git-存档-30" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement is_member_of?(group)"</span>
+</code></pre>
+<h2 id="“加入群组”或”退出群组”"><a href="#“加入群组”或”退出群组”" class="headerlink" title="“加入群组”或”退出群组”"></a>“加入群组”或”退出群组”</h2><h3 id="实现-model-层-“加入群组”-amp-amp-“退出群组”"><a href="#实现-model-层-“加入群组”-amp-amp-“退出群组”" class="headerlink" title="实现 model 层 “加入群组” &amp;&amp; “退出群组”"></a>实现 model 层 “加入群组” &amp;&amp; “退出群组”</h3><ul>
+<li><p>修改app/models/user.rb:</p>
+<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">join!</span><span class="params">(group)</span></span>
+  participated_groups &lt;&lt; group
+<span class="keyword">end</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">quit!</span><span class="params">(group)</span></span>
+  participated_groups.delete(group)
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jo3znlu5j30mu0i10yp.jpg" width="100%" style="margin:0;"><br>打开 rails console</p>
+</li>
+<li>执行:<pre><code class="bash">$ u = User.first
+$ g = Group.first
+$ u.join!(g)
+$ u.is_member_of?(g)
+$ u.quit!(g)
+$ u.is_member_of?(g)
+$ <span class="built_in">exit</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9johu8jwuj30u80jn444.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9johmejb7j31oe0qkqoh.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-31"><a href="#git-存档-31" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"join or quit group"</span>
+</code></pre>
+<h3 id="实际操作”加入群组”或”退出群组”"><a href="#实际操作”加入群组”或”退出群组”" class="headerlink" title="实际操作”加入群组”或”退出群组”"></a>实际操作”加入群组”或”退出群组”</h3><ul>
+<li><p>修改 app/controllers/groups_controller.rb:</p>
+<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">join</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+
+  <span class="keyword">if</span> !current_user.is_member_of?(@group)
+    current_user.join!(@group)
+    flash[<span class="symbol">:notice</span>] = <span class="string">"加入本讨论版成功！"</span>
+  <span class="keyword">else</span>
+    flash[<span class="symbol">:warning</span>] = <span class="string">"你已经是本讨论版成员了！"</span>
+  <span class="keyword">end</span>
+
+  redirect_to group_path(@group)
+<span class="keyword">end</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">quit</span></span>
+  @group = Group.find(params[<span class="symbol">:id</span>])
+
+  <span class="keyword">if</span> current_user.is_member_of?(@group)
+    current_user.quit!(@group)
+    flash[<span class="symbol">:alert</span>] = <span class="string">"已退出本讨论版！"</span>
+  <span class="keyword">else</span>
+    flash[<span class="symbol">:warning</span>] = <span class="string">"你不是本讨论版成员，怎么退出 XD"</span>
+  <span class="keyword">end</span>
+
+  redirect_to group_path(@group)
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jop9pk4nj30ng0mgjx5.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>加入与退出群组必须要是登入状态下才行，修改位於第二行的 before_action ，加入 join 和 quit 也需要验证:</p>
+<pre><code class="rb">before_action <span class="symbol">:authenticate_user!</span> , <span class="symbol">only:</span> [<span class="symbol">:new</span>, <span class="symbol">:create</span>, <span class="symbol">:edit</span>, <span class="symbol">:update</span>, <span class="symbol">:destroy</span>, <span class="symbol">:join</span>, <span class="symbol">:quit</span>]
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jor795a3j30zz09gwin.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改 config/routes.rb:</p>
+<pre><code class="rb">member <span class="keyword">do</span>
+  post <span class="symbol">:join</span>
+  post <span class="symbol">:quit</span>
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jotpjt38j31000e00x6.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改 app/views/groups/show.html.erb:</p>
+</li>
+</ul>
+<pre><code class="html">+ <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Quit</span> <span class="attr">Group</span>", <span class="attr">quit_group_path</span>(@<span class="attr">group</span>), <span class="attr">method:</span> <span class="attr">:post</span>, <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-secondary</span> <span class="attr">mr-3</span>") %&gt;</span>
++ <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Join</span> <span class="attr">Group</span>", <span class="attr">join_group_path</span>(@<span class="attr">group</span>), <span class="attr">method:</span> <span class="attr">:post</span>, <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-secondary</span> <span class="attr">mr-3</span>") %&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpcky94yj30se0j4k0y.jpg" width="100%" style="margin:0;"></p>
+<p>预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpb0n4xaj31jt0u0461.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpb6xxspj31jz0u0qaf.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-32"><a href="#git-存档-32" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"join &amp; quit group action"</span>
+</code></pre>
+<h2 id="User-在建立-group-后自动成为-group-的一员"><a href="#User-在建立-group-后自动成为-group-的一员" class="headerlink" title="User 在建立 group 后自动成为 group 的一员"></a>User 在建立 group 后自动成为 group 的一员</h2><p>当你创办了 group ，却还要手动再加入这个 group 不会很怪吗？ XD<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jps7jexrj31me0u0k3d.jpg" width="100%" style="margin:0;"></p>
+<h3 id="让-User-在建立-group-后自动成为-group-的一员"><a href="#让-User-在建立-group-后自动成为-group-的一员" class="headerlink" title="让 User 在建立 group 后自动成为 group 的一员"></a>让 User 在建立 group 后自动成为 group 的一员</h3><ul>
+<li>修改 app/controllers/groups_controller.rb:<pre><code class="rb">current_user.join!(@group)
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jps5dcyyj30yi0hpac3.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>再新增一个group,就会主动成为群组成员了:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jpwywvmzj31400ew763.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-33"><a href="#git-存档-33" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"when created a group, join it automatically"</span>
+</code></pre>
+<h2 id="可以看到自己参与的所有群组"><a href="#可以看到自己参与的所有群组" class="headerlink" title="可以看到自己参与的所有群组"></a>可以看到自己参与的所有群组</h2><pre><code class="bash">$ git checkout -b abby07
+</code></pre>
+<h3 id="产生-account-的-namespace-下的-groups-controller"><a href="#产生-account-的-namespace-下的-groups-controller" class="headerlink" title="产生 account 的 namespace 下的 groups_controller"></a>产生 account 的 namespace 下的 groups_controller</h3><ul>
+<li>执行: <pre><code class="bash">$ rails g controller account/groups
+</code></pre>
+<h3 id="修改-routing-1"><a href="#修改-routing-1" class="headerlink" title="修改 routing"></a>修改 routing</h3></li>
+<li>修改 config/routes.rb 加入：<pre><code class="rb">namespace <span class="symbol">:account</span> <span class="keyword">do</span>
+  resources <span class="symbol">:groups</span>
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqorwrs1j30yi0hq0xe.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="修改下拉选项"><a href="#修改下拉选项" class="headerlink" title="修改下拉选项"></a>修改下拉选项</h3><ul>
+<li>然后修改 app/views/common/_navbar.html.erb,在”下拉选单选项”中多加入一个My Groups:</li>
+</ul>
+<pre><code class="html">+ <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">My</span> <span class="attr">Groups</span>", <span class="attr">account_groups_path</span>, <span class="attr">class:</span> "<span class="attr">nav-link</span>") %&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
++ <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown-divider"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqw9ylqaj30se0irdoh.jpg" width="100%" style="margin:0;"></p>
+<p>预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jqx4mwsfj31za0u0q6q.jpg" width="100%" style="margin:0;"></p>
+<h3 id="建立-account-groups-controller-rb-下的-index-action"><a href="#建立-account-groups-controller-rb-下的-index-action" class="headerlink" title="建立 account/groups_controller.rb 下的 index action"></a>建立 account/groups_controller.rb 下的 index action</h3><p>记得要加入： before_action :authenticate_user!，限制必须要得登录使用者，才能看。</p>
+<ul>
+<li><p>修改 app/controllers/account/groups_controller.rb:</p>
+<pre><code class="rb">before_action <span class="symbol">:authenticate_user!</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">index</span></span>
+  @groups = current_user.participated_groups
+<span class="keyword">end</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jr0rsbi8j30wk0daaej.jpg" width="100%" style="margin:0;"></p>
+</li>
+</ul>
+<h3 id="新增-“参与群组一览表”"><a href="#新增-“参与群组一览表”" class="headerlink" title="新增 “参与群组一览表”"></a>新增 “参与群组一览表”</h3><ul>
+<li>执行:<pre><code class="bash">$ touch app/views/account/groups/index.html.erb
+</code></pre>
+码入:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"text-center mt-5 mb-5"</span>&gt;</span> 我加入的讨论版 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">thead</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> ID <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Title <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Description <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Post Count <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Last Update <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">groups.each</span> <span class="attr">do</span> |<span class="attr">group</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.id</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>(<span class="attr">group.title</span>, <span class="attr">group_path</span>(<span class="attr">group</span>)) %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.description</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.posts.count</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.updated_at</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+预期结果:</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jr60y2llj32800qidjh.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-34"><a href="#git-存档-34" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement my groups"</span>
+</code></pre>
+<h2 id="可以看到自己发表的所有文章"><a href="#可以看到自己发表的所有文章" class="headerlink" title="可以看到自己发表的所有文章"></a>可以看到自己发表的所有文章</h2><h3 id="产生-account-的-namespace-下的-posts-controller"><a href="#产生-account-的-namespace-下的-posts-controller" class="headerlink" title="产生 account 的 namespace 下的 posts_controller"></a>产生 account 的 namespace 下的 posts_controller</h3><ul>
+<li>执行:<pre><code class="bash">$ rails g controller account/posts
+</code></pre>
+<h3 id="建立-account-posts-controller-rb-下的-index-action"><a href="#建立-account-posts-controller-rb-下的-index-action" class="headerlink" title="建立 account/posts_controller.rb 下的 index action"></a>建立 account/posts_controller.rb 下的 index action</h3></li>
+<li>加入： before_action :authenticate_user!，限制必须要得登入使用者，才能看<br>修改 app/controllers/account/posts_controller.rb:<pre><code class="rb">before_action <span class="symbol">:authenticate_user!</span>
+<span class="function"><span class="keyword">def</span> <span class="title">index</span></span>
+  @posts = current_user.posts
+<span class="keyword">end</span>
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jreqj4u4j30vy0c00wv.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="修改-routing-2"><a href="#修改-routing-2" class="headerlink" title="修改 routing"></a>修改 routing</h3><pre><code class="rb">+ resources <span class="symbol">:posts</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrhqr847j30x20hpgq1.jpg" width="100%" style="margin:0;"></p>
+<h3 id="修改下拉选项-1"><a href="#修改下拉选项-1" class="headerlink" title="修改下拉选项"></a>修改下拉选项</h3><ul>
+<li>然后修改 app/views/common/_navbar.html.erb,加入多一个”下拉选单选项”:<br><code>`</code> html </li>
+</ul>
+<ul>
+<li></li><li> &lt;%= link_to(“My Posts”, account_posts_path, class: “nav-link”) %&gt;</li><br><code>`</code><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrm7uno0j30ug0jpwo3.jpg" width="100%" style="margin:0;">
+</ul>
+<p>预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrn1yc3lj31xc0u0q7e.jpg" width="100%" style="margin:0;"></p>
+<h3 id="新增-“发表文章一览表”"><a href="#新增-“发表文章一览表”" class="headerlink" title="新增 “发表文章一览表”"></a>新增 “发表文章一览表”</h3><ul>
+<li>执行:<pre><code class="bash">$ touch app/views/account/posts/index.html.erb
+</code></pre>
+码入:<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"text-center mt-5 mb-5"</span>&gt;</span> 我发表过的文章 <span class="tag">&lt;/<span class="name">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">thead</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Content <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Group Name <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span>&gt;</span> Last Update <span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> @<span class="attr">posts.each</span> <span class="attr">do</span> |<span class="attr">post</span>| %&gt;</span>
+      <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.content</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.group.title</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">post.updated_at</span> %&gt;</span> <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>('<span class="attr">Edit</span>', <span class="attr">edit_group_post_path</span>(<span class="attr">post.group</span>, <span class="attr">post</span>), <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-outline-success</span>") %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>('<span class="attr">Delete</span>', <span class="attr">group_post_path</span>(<span class="attr">post.group</span>, <span class="attr">post</span>), <span class="attr">method:</span> <span class="attr">:delete</span>, <span class="attr">data:</span> { <span class="attr">confirm:</span> "<span class="attr">Are</span> <span class="attr">you</span> <span class="attr">sure</span>?" }, <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-outline-danger</span>") %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">table</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+预期结果:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrtwzv10j31iw0u0k0r.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<h3 id="git-存档-35"><a href="#git-存档-35" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"implement my posts"</span>
+</code></pre>
+<h2 id="系统内建-Helper-“simple-format”-的使用"><a href="#系统内建-Helper-“simple-format”-的使用" class="headerlink" title="系统内建 Helper “simple_format” 的使用"></a>系统内建 Helper “simple_format” 的使用</h2><pre><code class="bash">$ git checkout -b abby08
+</code></pre>
+<p>让群组叙述能够正确的断行<br>当你开始使用这个系统时，你会发现一件很奇怪的事，输入三行叙述:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jrztsowhj31400h2761.jpg" width="100%" style="margin:0;"></p>
+<p>没有进行正确断行:<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js0lhxftj31420i6whj.jpg" width="100%" style="margin:0;"></p>
+<h3 id="将group-description-改成-simple-format-group-description"><a href="#将group-description-改成-simple-format-group-description" class="headerlink" title="将group.description 改成 simple_format(group.description)"></a>将group.description 改成 simple_format(group.description)</h3><ul>
+<li>修改 app/views/groups/index.html.erb:<br><code>`</code> html </li>
+</ul>
+<ul>
+<li><td>&lt;%= group.description %&gt;</td>
+</li>
+</ul>
+<ul>
+<li><td>&lt;%= simple_format(group.description) %&gt;</td><br><code>`</code><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js41qtxoj30rs0hqdmg.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>然后你就可以看到正确的断行<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9js56twbcj31420gudiw.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-36"><a href="#git-存档-36" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"use simple_format helper to decorate"</span>
+</code></pre>
+<h2 id="使用自定义-Helper"><a href="#使用自定义-Helper" class="headerlink" title="使用自定义 Helper"></a>使用自定义 Helper</h2><h3 id="自制-render-group-description-group"><a href="#自制-render-group-description-group" class="headerlink" title="自制 render_group_description(group)"></a>自制 render_group_description(group)</h3><ul>
+<li>修改 app/helpers/groups_helper.rb:<pre><code class="rb"><span class="function"><span class="keyword">def</span> <span class="title">render_group_description</span><span class="params">(group)</span></span>
+  simple_format(group.description)
+<span class="keyword">end</span> 
+</code></pre>
+<img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9jshfb92jj30vs0cwwib.jpg" width="100%" style="margin:0;"></li>
+</ul>
+<p>然后修改 app/views/groups/index.html.erb 与 app/views/account/groups/index.html.erb 里关于 group.description 的部分（最终代码如下）:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">render_group_description</span>(<span class="attr">group</span>) %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keqel4xkj30ru0hptfa.jpg" width="100%" style="margin:0;"><br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keqrbj44j30io0ja79n.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-37"><a href="#git-存档-37" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"use self delimit helper"</span>
+</code></pre>
+<h2 id="partial-还可以这样用"><a href="#partial-还可以这样用" class="headerlink" title="partial 还可以这样用"></a>partial 还可以这样用</h2><h3 id="partial-还可以用在循环上"><a href="#partial-还可以用在循环上" class="headerlink" title="partial 还可以用在循环上"></a>partial 还可以用在循环上</h3><ul>
+<li><p>执行:</p>
+<pre><code class="bash">$ touch app/views/groups/_group_item.html.erb
+</code></pre>
+<p>码入:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">td</span>&gt;</span>#<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>(<span class="attr">group.title</span>, <span class="attr">group_path</span>(<span class="attr">group</span>)) %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">render_group_description</span>(<span class="attr">group</span>) %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">group.user.email</span> %&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">td</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> <span class="attr">current_user</span> &amp;&amp; <span class="attr">current_user</span> == <span class="string">group.user</span> %&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Edit</span>", <span class="attr">edit_group_path</span>(<span class="attr">group</span>), <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-default</span>")%&gt;</span>
+      <span class="tag">&lt;<span class="name">%=</span> <span class="attr">link_to</span>("<span class="attr">Delete</span>", <span class="attr">group_path</span>(<span class="attr">group</span>),    <span class="attr">class:</span> "<span class="attr">btn</span> <span class="attr">btn-sm</span> <span class="attr">btn-default</span>",</span>
+<span class="tag">          <span class="attr">method:</span> <span class="attr">:delete</span>, <span class="attr">data:</span> { <span class="attr">confirm:</span> "<span class="attr">Are</span> <span class="attr">you</span> <span class="attr">sure</span>?" } )%&gt;</span>
+    <span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span>
+  <span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kf1jmf2mj319i0mk79n.jpg" width="100%" style="margin:0;"></p>
+</li>
+<li><p>修改 app/views/groups/index.html.erb</p>
+</li>
+</ul>
+<p>把下图中红色框出的部分砍掉：<br><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kewsfjmsj30q60hwteq.jpg" width="100%" style="margin:0;"></p>
+<p>换成 partial:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">render</span> <span class="attr">:partial</span> =&gt;</span> "group_item", :collection =&gt; @groups, :as =&gt; :group %&gt;
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keycul7kj30ry0hpn2l.jpg" width="100%" style="margin:0;"></p>
+<h3 id="git-存档-38"><a href="#git-存档-38" class="headerlink" title="git 存档"></a>git 存档</h3><pre><code class="bash">$ git add .
+$ git commit -m <span class="string">"render partial with collection"</span>
+</code></pre>
+<p>ok,到此完结,撒花🎉,庆祝<del>~</del>~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="AbbyYeCp 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="AbbyYeCp 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ruby-on-rails/" rel="tag"># Ruby on rails</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/CSS选择符号/" rel="next" title="CSS选择符">
+                <i class="fa fa-chevron-left"></i> CSS选择符
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0d1vx8c0lj30u00w6aqm.jpg" alt="AbbyYeCp">
+            
+              <p class="site-author-name" itemprop="name">AbbyYeCp</p>
+              <p class="site-description motion-element" itemprop="description">这些年来，她东奔西走，无人伴她以歌，无人伴她以酒，到最后，竟也无人伴她共白头。<br> ——夏七夕 《飞过有你的城市》</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/AbbyXYecp" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:abbyxyecp@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script src="//cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+  <script>
+      var gitalk = new Gitalk({
+        clientID: 'b327f84bfaa4514ffd4f',
+        clientSecret: '314224abe617337c55473f368397e366d483fd62',
+        repo: 'AbbyXYeCp.github.io',
+        owner: 'AbbyXYecp',
+        admin: 'AbbyXYecp',
+        id: md5(location.pathname),
+        distractionFreeMode: 'true'
+      });
+      var div = document.createElement('div');
+      div.setAttribute("id", "gitalk_comments");
+      div.setAttribute("class", "post-nav");
+      var bro = document.getElementById('posts').getElementsByTagName('article');
+      bro = bro[0].getElementsByClassName('post-block');
+      bro = bro[0].getElementsByTagName('footer');
+      bro = bro[0];
+      bro.appendChild(div);
+      gitalk.render('gitalk_comments');
+  </script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立一个新-Rails-项目"><span class="nav-number">1.</span> <span class="nav-text">建立一个新 Rails 项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立-git-做版本控制"><span class="nav-number">2.</span> <span class="nav-text">建立 git 做版本控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮-Rails-项目穿上衣服“Bootstrap”"><span class="nav-number">3.</span> <span class="nav-text">帮 Rails 项目穿上衣服“Bootstrap”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入Bootstrap"><span class="nav-number">3.1.</span> <span class="nav-text">引入Bootstrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将-Bootstrap-的-CSS-套件装进项目里面"><span class="nav-number">3.2.</span> <span class="nav-text">将 Bootstrap 的 CSS 套件装进项目里面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将变更-commit-进去-git-里面"><span class="nav-number">3.3.</span> <span class="nav-text">将变更 commit 进去 git 里面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#套用-Bootstrap-的-html-样式"><span class="nav-number">4.</span> <span class="nav-text">套用 Bootstrap 的 html 样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-app-views-common-文件夹"><span class="nav-number">4.1.</span> <span class="nav-text">新增 app/views/common 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-navbar"><span class="nav-number">4.2.</span> <span class="nav-text">新增 navbar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-footer"><span class="nav-number">4.3.</span> <span class="nav-text">新增 footer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改全域-HTML-样式-application-html-erb"><span class="nav-number">4.4.</span> <span class="nav-text">修改全域 HTML 样式 application.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生一个新的空-Hello-World-页面-（放在-welcome-index"><span class="nav-number">4.5.</span> <span class="nav-text">产生一个新的空 Hello World 页面 （放在 welcome#index)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将首页指到-welcome-下的-index-html-erb-页面"><span class="nav-number">4.6.</span> <span class="nav-text">将首页指到 welcome 下的 index.html.erb 页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-进度存档"><span class="nav-number">4.7.</span> <span class="nav-text">git 进度存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行-Rails-Server"><span class="nav-number">4.8.</span> <span class="nav-text">运行 Rails Server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作漂亮的“提示信息”"><span class="nav-number">5.</span> <span class="nav-text">制作漂亮的“提示信息”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-app-views-common-flashes-html-erb"><span class="nav-number">5.1.</span> <span class="nav-text">新增 app/views/common/_flashes.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入-app-helpers-flashes-helper-rb"><span class="nav-number">5.2.</span> <span class="nav-text">加入 app/helpers/flashes_helper.rb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-application-html-erb-内加入-flash-这个-partial"><span class="nav-number">5.3.</span> <span class="nav-text">在 application.html.erb 内加入 flash 这个 partial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-flash-helper-的功能"><span class="nav-number">5.4.</span> <span class="nav-text">测试 flash helper 的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档"><span class="nav-number">5.5.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立讨论群的架构"><span class="nav-number">6.</span> <span class="nav-text">建立讨论群的架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计-Group-的-model-架构"><span class="nav-number">6.1.</span> <span class="nav-text">设计 Group 的 model 架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生-groups-controller"><span class="nav-number">6.2.</span> <span class="nav-text">产生 groups controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-index-action-以及-index-的-view"><span class="nav-number">6.3.</span> <span class="nav-text">建立 index action 以及 index 的 view</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-routing-上挂上-groups"><span class="nav-number">6.4.</span> <span class="nav-text">在 routing 上挂上 groups</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加一些数据"><span class="nav-number">6.5.</span> <span class="nav-text">添加一些数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-1"><span class="nav-number">6.6.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将首页换成讨论群一览表"><span class="nav-number">7.</span> <span class="nav-text">将首页换成讨论群一览表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-routing"><span class="nav-number">7.1.</span> <span class="nav-text">修改 routing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-2"><span class="nav-number">7.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现讨论群“新增”功能"><span class="nav-number">8.</span> <span class="nav-text">实现讨论群“新增”功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-new-action"><span class="nav-number">8.1.</span> <span class="nav-text">建立 new action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-new-action-的表单"><span class="nav-number">8.2.</span> <span class="nav-text">建立 new action 的表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-3"><span class="nav-number">8.3.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-create-action，接收数据并储存"><span class="nav-number">8.4.</span> <span class="nav-text">建立 create action，接收数据并储存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-4"><span class="nav-number">8.5.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现讨论群“浏览”功能"><span class="nav-number">9.</span> <span class="nav-text">实现讨论群“浏览”功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-show-action"><span class="nav-number">9.1.</span> <span class="nav-text">建立 show action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入-app-views-groups-show-html-erb"><span class="nav-number">9.2.</span> <span class="nav-text">加入 app/views/groups/show.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-5"><span class="nav-number">9.3.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现讨论群“编辑”功能"><span class="nav-number">10.</span> <span class="nav-text">实现讨论群“编辑”功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-edit-action"><span class="nav-number">10.1.</span> <span class="nav-text">建立 edit action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-edit-action-的表单"><span class="nav-number">10.2.</span> <span class="nav-text">建立 edit action 的表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-6"><span class="nav-number">10.3.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-update-action"><span class="nav-number">10.4.</span> <span class="nav-text">实现 update action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-7"><span class="nav-number">10.5.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现讨论群“删除”功能"><span class="nav-number">11.</span> <span class="nav-text">实现讨论群“删除”功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-delete-action"><span class="nav-number">11.1.</span> <span class="nav-text">建立 delete action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-8"><span class="nav-number">11.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#限制“标题为空”的Group，不能被新增"><span class="nav-number">12.</span> <span class="nav-text">限制“标题为空”的Group，不能被新增</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Group-model-加入“标题限制”"><span class="nav-number">12.1.</span> <span class="nav-text">在 Group model 加入“标题限制”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-groups-controller-里面加入储存失败的判断"><span class="nav-number">12.2.</span> <span class="nav-text">在 groups_controller 里面加入储存失败的判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-9"><span class="nav-number">12.3.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-edit-action"><span class="nav-number">12.4.</span> <span class="nav-text">修改 edit action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-10"><span class="nav-number">12.5.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共用“表单”"><span class="nav-number">13.</span> <span class="nav-text">共用“表单”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生-app-views-groups-form-html-erb"><span class="nav-number">13.1.</span> <span class="nav-text">产生 app/views/groups/_form.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-app-views-groups-new-html-erb"><span class="nav-number">13.2.</span> <span class="nav-text">修改 app/views/groups/new.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-app-views-groups-edit-html-erb"><span class="nav-number">13.3.</span> <span class="nav-text">修改 app/views/groups/edit.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-11"><span class="nav-number">13.4.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将表单换为-Bootstrap-提供的版型"><span class="nav-number">14.</span> <span class="nav-text">将表单换为 Bootstrap 提供的版型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-app-views-groups-form-html-erb"><span class="nav-number">14.1.</span> <span class="nav-text">修改 app/views/groups/_form.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-12"><span class="nav-number">14.2.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-SimpleForm-简化"><span class="nav-number">14.3.</span> <span class="nav-text">使用 SimpleForm 简化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-simple-form-for-bootstrap-的设定"><span class="nav-number">14.4.</span> <span class="nav-text">安装 simple_form for bootstrap 的设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-app-views-groups-form-html-erb-1"><span class="nav-number">14.5.</span> <span class="nav-text">修改 app/views/groups/_form.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-13"><span class="nav-number">14.6.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-devise-gem"><span class="nav-number">15.</span> <span class="nav-text">安装 devise gem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装登录系统"><span class="nav-number">15.1.</span> <span class="nav-text">安装登录系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生会员系统的必要文件"><span class="nav-number">15.2.</span> <span class="nav-text">产生会员系统的必要文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-groups-controller-限制-“新增讨论群”必须先登录"><span class="nav-number">15.3.</span> <span class="nav-text">在 groups_controller 限制 “新增讨论群”必须先登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-14"><span class="nav-number">15.4.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让这个网站有实际“登录”、“退出”的功能"><span class="nav-number">16.</span> <span class="nav-text">让这个网站有实际“登录”、“退出”的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-app-views-common-navbar-html-erb"><span class="nav-number">16.1.</span> <span class="nav-text">修改 app/views/common/_navbar.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-15"><span class="nav-number">16.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让“群组”与“使用者”产生关联"><span class="nav-number">17.</span> <span class="nav-text">让“群组”与“使用者”产生关联</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-user-id-到-group-的-table-里"><span class="nav-number">17.1.</span> <span class="nav-text">新增 user_id 到 group 的 table 里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连结-user-与-group-的双向关系"><span class="nav-number">17.2.</span> <span class="nav-text">连结 user 与 group 的双向关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在新增看板时，记录谁是群组的建立者"><span class="nav-number">17.3.</span> <span class="nav-text">在新增看板时，记录谁是群组的建立者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-16"><span class="nav-number">17.4.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-group-列表，将-user-的名字列上去"><span class="nav-number">17.5.</span> <span class="nav-text">修改 group 列表，将 user 的名字列上去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除所有“无主”的群组"><span class="nav-number">17.6.</span> <span class="nav-text">删除所有“无主”的群组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-17"><span class="nav-number">17.7.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只有群组的“创始者”可以“编辑”“删除”群组资讯"><span class="nav-number">18.</span> <span class="nav-text">只有群组的“创始者”可以“编辑”“删除”群组资讯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路人不应该可以看到“编辑”“删除”按钮"><span class="nav-number">18.1.</span> <span class="nav-text">路人不应该可以看到“编辑”“删除”按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-18"><span class="nav-number">18.2.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路人不应该也可以“直接输入网址”去存取-edit-update-destroy-action"><span class="nav-number">18.3.</span> <span class="nav-text">路人不应该也可以“直接输入网址”去存取 edit / update / destroy action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#必须要是-group-拥有人，才能进入-edit，否则会被重导至首页，并显示错误信息"><span class="nav-number">18.4.</span> <span class="nav-text">必须要是 group 拥有人，才能进入 edit，否则会被重导至首页，并显示错误信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依样画葫芦的把“权限检查”的代码，套用到-update-destroy-上"><span class="nav-number">18.5.</span> <span class="nav-text">依样画葫芦的把“权限检查”的代码，套用到 update / destroy 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-19"><span class="nav-number">18.6.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制作-find-group-and-check-permission"><span class="nav-number">18.7.</span> <span class="nav-text">制作 find_group_and_check_permission</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把-find-group-and-check-permission-挂到-before-action"><span class="nav-number">18.8.</span> <span class="nav-text">把 find_group_and_check_permission 挂到 before_action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-20"><span class="nav-number">18.9.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修掉-show-里面的-Edit-按钮"><span class="nav-number">18.10.</span> <span class="nav-text">修掉 show 里面的 Edit 按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-21"><span class="nav-number">18.11.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立文章的架构"><span class="nav-number">19.</span> <span class="nav-text">建立文章的架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计-Post-的-model-架构"><span class="nav-number">19.1.</span> <span class="nav-text">设计 Post 的 model 架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-Group-Post-User-三者间的关系"><span class="nav-number">19.2.</span> <span class="nav-text">建立 Group / Post / User 三者间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-22"><span class="nav-number">19.3.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-Post-Controller"><span class="nav-number">19.4.</span> <span class="nav-text">建立 Post Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设立-routing"><span class="nav-number">19.5.</span> <span class="nav-text">设立 routing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-23"><span class="nav-number">19.6.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在-groups-show-新增-“发表文章”-按钮"><span class="nav-number">19.7.</span> <span class="nav-text">在 groups#show 新增 “发表文章” 按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-24"><span class="nav-number">19.8.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际发表文章"><span class="nav-number">20.</span> <span class="nav-text">实际发表文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-new-create-action"><span class="nav-number">20.1.</span> <span class="nav-text">实现 new / create action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-app-views-posts-new-html-erb"><span class="nav-number">20.2.</span> <span class="nav-text">新增 app/views/posts/new.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-controller-中的-show-action"><span class="nav-number">20.3.</span> <span class="nav-text">修改 groups_controller 中的 show action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-show-html-erb"><span class="nav-number">20.4.</span> <span class="nav-text">修改 groups/show.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对-Post-加上-validation"><span class="nav-number">20.5.</span> <span class="nav-text">对 Post 加上 validation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-25"><span class="nav-number">20.6.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章应该按照发表时间倒序排列"><span class="nav-number">21.</span> <span class="nav-text">文章应该按照发表时间倒序排列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-controller"><span class="nav-number">21.1.</span> <span class="nav-text">修改 groups_controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-26"><span class="nav-number">21.2.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-scope-替代直接-order"><span class="nav-number">21.3.</span> <span class="nav-text">使用 scope 替代直接 order</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-27"><span class="nav-number">21.4.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加入文章分页功能"><span class="nav-number">22.</span> <span class="nav-text">加入文章分页功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-will-paginate"><span class="nav-number">22.1.</span> <span class="nav-text">安装 will_paginate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-controller-1"><span class="nav-number">22.2.</span> <span class="nav-text">修改 groups_controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-show-html-erb-1"><span class="nav-number">22.3.</span> <span class="nav-text">修改 groups/show.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-28"><span class="nav-number">22.4.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立“群成员”数据表"><span class="nav-number">23.</span> <span class="nav-text">建立“群成员”数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-GroupRelationship"><span class="nav-number">23.1.</span> <span class="nav-text">建立 GroupRelationship</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设定-Group-与-User-之间的关系-使用者参与的所有群"><span class="nav-number">23.2.</span> <span class="nav-text">设定 Group 与 User 之间的关系 (使用者参与的所有群)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设定-Group-与-User-之间的关系-群组内的所有会员"><span class="nav-number">23.3.</span> <span class="nav-text">设定 Group 与 User 之间的关系 (群组内的所有会员)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动手测看看"><span class="nav-number">23.4.</span> <span class="nav-text">动手测看看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-29"><span class="nav-number">23.5.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现在群组里面判断-“是否群组成员”"><span class="nav-number">24.</span> <span class="nav-text">实现在群组里面判断 “是否群组成员”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-user-model-内实现判断式”是否为群组的一分子”"><span class="nav-number">24.1.</span> <span class="nav-text">在 user model 内实现判断式”是否为群组的一分子”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-groups-show-html-erb-2"><span class="nav-number">24.2.</span> <span class="nav-text">修改 groups/show.html.erb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-30"><span class="nav-number">24.3.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“加入群组”或”退出群组”"><span class="nav-number">25.</span> <span class="nav-text">“加入群组”或”退出群组”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-model-层-“加入群组”-amp-amp-“退出群组”"><span class="nav-number">25.1.</span> <span class="nav-text">实现 model 层 “加入群组” &amp;&amp; “退出群组”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-31"><span class="nav-number">25.2.</span> <span class="nav-text">git 存档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际操作”加入群组”或”退出群组”"><span class="nav-number">25.3.</span> <span class="nav-text">实际操作”加入群组”或”退出群组”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-32"><span class="nav-number">25.4.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-在建立-group-后自动成为-group-的一员"><span class="nav-number">26.</span> <span class="nav-text">User 在建立 group 后自动成为 group 的一员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让-User-在建立-group-后自动成为-group-的一员"><span class="nav-number">26.1.</span> <span class="nav-text">让 User 在建立 group 后自动成为 group 的一员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-33"><span class="nav-number">26.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以看到自己参与的所有群组"><span class="nav-number">27.</span> <span class="nav-text">可以看到自己参与的所有群组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生-account-的-namespace-下的-groups-controller"><span class="nav-number">27.1.</span> <span class="nav-text">产生 account 的 namespace 下的 groups_controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-routing-1"><span class="nav-number">27.2.</span> <span class="nav-text">修改 routing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改下拉选项"><span class="nav-number">27.3.</span> <span class="nav-text">修改下拉选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-account-groups-controller-rb-下的-index-action"><span class="nav-number">27.4.</span> <span class="nav-text">建立 account/groups_controller.rb 下的 index action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-“参与群组一览表”"><span class="nav-number">27.5.</span> <span class="nav-text">新增 “参与群组一览表”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-34"><span class="nav-number">27.6.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以看到自己发表的所有文章"><span class="nav-number">28.</span> <span class="nav-text">可以看到自己发表的所有文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生-account-的-namespace-下的-posts-controller"><span class="nav-number">28.1.</span> <span class="nav-text">产生 account 的 namespace 下的 posts_controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-account-posts-controller-rb-下的-index-action"><span class="nav-number">28.2.</span> <span class="nav-text">建立 account/posts_controller.rb 下的 index action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-routing-2"><span class="nav-number">28.3.</span> <span class="nav-text">修改 routing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改下拉选项-1"><span class="nav-number">28.4.</span> <span class="nav-text">修改下拉选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新增-“发表文章一览表”"><span class="nav-number">28.5.</span> <span class="nav-text">新增 “发表文章一览表”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-35"><span class="nav-number">28.6.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统内建-Helper-“simple-format”-的使用"><span class="nav-number">29.</span> <span class="nav-text">系统内建 Helper “simple_format” 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将group-description-改成-simple-format-group-description"><span class="nav-number">29.1.</span> <span class="nav-text">将group.description 改成 simple_format(group.description)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-36"><span class="nav-number">29.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用自定义-Helper"><span class="nav-number">30.</span> <span class="nav-text">使用自定义 Helper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自制-render-group-description-group"><span class="nav-number">30.1.</span> <span class="nav-text">自制 render_group_description(group)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-37"><span class="nav-number">30.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partial-还可以这样用"><span class="nav-number">31.</span> <span class="nav-text">partial 还可以这样用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#partial-还可以用在循环上"><span class="nav-number">31.1.</span> <span class="nav-text">partial 还可以用在循环上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-存档-38"><span class="nav-number">31.2.</span> <span class="nav-text">git 存档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      
+      <!--背景音乐-->
+      <!-- <link rel="stylesheet" href="/dist/APlayer.min.css">
+      <div id="aplayer"></div>
+      <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+      <script type="text/javascript" src="/dist/music.js"></script>-->
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AbbyYeCp</span>
+
+  
+</div>
+
+
+  <div class="powered-by"></div>
+
+
+
+  <span class="post-meta-divider"></span>
+
+
+
+  <div class="theme-info">
+  
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+<script type="text/javascript" color="82,138,93" opacity="0.6" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+  <script type="text/javascript">
+  /* 鼠标特效 */
+  var a_idx = 0;
+  jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#ff6651"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+  });
+  </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":180},"mobile":{"show":true},"opacityDefault":0.2,"react":{"opacityDefault":1,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
