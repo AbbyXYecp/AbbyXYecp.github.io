@@ -222,7 +222,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kf1jmf2mj319i0mk79n.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9kewsfjmsj30q60hwteq.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006tNbRwgy1g9keycul7kj30ry0hpn2l.jpg">
-<meta property="og:updated_time" content="2019-12-04T01:16:47.443Z">
+<meta property="og:updated_time" content="2019-12-11T02:36:08.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ruby on rails-讨论版">
 <meta name="twitter:description" content="本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.开发环境:ruby-2.6.4rails-6.0.1node-12.13.0(xdite教材用的 Rails 版本是 5.0.0 ) 建立一个新 Rails 项目rails new 项目名1$ rails new rails104  建立 git 做版">
@@ -496,20 +496,25 @@
 <h3 id="引入Bootstrap"><a href="#引入Bootstrap" class="headerlink" title="引入Bootstrap"></a>引入Bootstrap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add bootstrap jquery popper.js</span><br></pre></td></tr></table></figure>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hgts17ej31c90u01kx.jpg" width="100%" style="margin:0;"></p>
 <ul>
-<li><p>修改config/webpack/environment.js 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ira3oqwj317a0nygti.jpg" width="100%" style="margin:0;"></p>
-</li>
-<li><p>修改app/javascript/packs/application.js 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95itd36dbj30s40hq488.jpg" width="100%" style="margin:0;"></p>
-</li>
-<li><p>修改config/webpacker.yml 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ivm2r71j30my0hon3d.jpg" width="100%" style="margin:0;"></p>
+<li>修改config/webpack/environment.js 文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line">environment.plugins.append(</span><br><span class="line">  <span class="string">'Provide'</span>,</span><br><span class="line">  <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: <span class="string">'jquery'</span>,</span><br><span class="line">    jQuery: <span class="string">'jquery'</span>,</span><br><span class="line">    Popper: [<span class="string">'popper.js'</span>, <span class="string">'default'</span>]</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ira3oqwj317a0nygti.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>修改app/javascript/packs/application.js 文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"bootstrap/dist/js/bootstrap"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95itd36dbj30s40hq488.jpg" width="100%" style="margin:0;"></p>
+<ul>
+<li>修改config/webpacker.yml 文件<br><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ivm2r71j30my0hon3d.jpg" width="100%" style="margin:0;"></li>
+</ul>
 <h3 id="将-Bootstrap-的-CSS-套件装进项目里面"><a href="#将-Bootstrap-的-CSS-套件装进项目里面" class="headerlink" title="将 Bootstrap 的 CSS 套件装进项目里面"></a>将 Bootstrap 的 CSS 套件装进项目里面</h3><ul>
-<li>将 application.css 更名为 application.scss<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</span><br></pre></td></tr></table></figure>
+<li>将 application.css 更名为 application.scss<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95hmdfs61j31fw034799.jpg" width="100%" style="margin:0;"></p>
 <ul>
-<li>在app/assets/stylesheets/application.scss文件加入下面这行代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ *= require bootstrap/scss/bootstrap</span><br></pre></td></tr></table></figure>
+<li>在app/assets/stylesheets/application.scss文件加入下面这行代码<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*= require bootstrap/scss/bootstrap</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95ht6irqnj31fk0r6q9f.jpg" width="100%" style="margin:0;"></p>
@@ -1899,7 +1904,7 @@ $ git commit -m <span class="string">"render partial with collection"</span>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1910,7 +1915,7 @@ $ git commit -m <span class="string">"render partial with collection"</span>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
