@@ -344,8 +344,7 @@
 
       
         
-          
-            <h2 id="字符串操作汇总"><a href="#字符串操作汇总" class="headerlink" title="字符串操作汇总"></a>字符串操作汇总</h2><ul>
+          <h2 id="字符串操作汇总"><a href="#字符串操作汇总" class="headerlink" title="字符串操作汇总"></a>字符串操作汇总</h2><ul>
 <li>let num = 56<h3 id="字符串的转换"><a href="#字符串的转换" class="headerlink" title="字符串的转换"></a>字符串的转换</h3></li>
 <li>num.toString()</li>
 <li>String(num)</li>
@@ -358,74 +357,13 @@
 <li>a.length</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.length:'</span>, a.length) <span class="comment">// a.length: 12</span></span><br></pre></td></tr></table></figure>
-<h3 id="指定位置字符"><a href="#指定位置字符" class="headerlink" title="指定位置字符"></a>指定位置字符</h3><ul>
-<li>a.charAt(index)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.charAt(8):'</span>, a.charAt(<span class="number">8</span>)) <span class="comment">// a.charAt(8): h</span></span><br></pre></td></tr></table></figure>
-<h3 id="指定位置字符Unicode编码"><a href="#指定位置字符Unicode编码" class="headerlink" title="指定位置字符Unicode编码"></a>指定位置字符Unicode编码</h3><ul>
-<li>a.charCodeAt(index)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.charCodeAt(8):'</span>, a.charCodeAt(<span class="number">8</span>)) <span class="comment">// a.charCodeAt(8): 104</span></span><br></pre></td></tr></table></figure>
-<h3 id="连接字符串"><a href="#连接字符串" class="headerlink" title="连接字符串"></a>连接字符串</h3><ul>
-<li>a.concat(b)</li>
-<li>let b = “ So Much !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.concat(b):'</span>, a.concat(b)) <span class="comment">// a.concat(b): I Love China So Much !</span></span><br></pre></td></tr></table></figure>
-<h3 id="检索字符串"><a href="#检索字符串" class="headerlink" title="检索字符串"></a>检索字符串</h3><ul>
-<li>a.indexOf() 返回检索字符首次出现的位置,不存在则返回-1,对大小写敏感</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("love"):'</span>, a.indexOf(<span class="string">"love"</span>)) <span class="comment">// a.indexOf("love"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("Love"):'</span>, a.indexOf(<span class="string">"Love"</span>)) <span class="comment">// a.indexOf("Love"): 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("Lovi"):'</span>, a.indexOf(<span class="string">"Lovi"</span>)) <span class="comment">// a.indexOf("Lovi"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("I"):'</span>, a.indexOf(<span class="string">"I"</span>))       <span class="comment">// a.indexOf("I"): 0</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.lastIndexOf() 返回检索字符最后出现的位置,不存在则返回-1,对大小写敏感</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("love"):'</span>, a.lastIndexOf(<span class="string">"love"</span>)) <span class="comment">// a.lastIndexOf("love"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("Love"):'</span>, a.lastIndexOf(<span class="string">"Love"</span>)) <span class="comment">// a.lastIndexOf("Love"): 16</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("Lovi"):'</span>, a.lastIndexOf(<span class="string">"Lovi"</span>)) <span class="comment">// a.lastIndexOf("Lovi"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("I"):'</span>, a.lastIndexOf(<span class="string">"I"</span>))       <span class="comment">// a.lastIndexOf("I"): 14</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.match() 返回检索字符串内指定的值，或找到一个或多个正则表达式的匹配,结果返回数组</li>
-<li>数组拥有一个额外的 input 属性，该属性包含原始字符串。</li>
-<li>数组还拥有一个 index 属性，该属性表示匹配结果在被字符串中的索引（以0开始）。</li>
-<li>如果正则表达式包含 g 标志，则该方法返回匹配字符串的数组。</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="string">'Y'</span>)) <span class="comment">// a.match(): null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="regexp">/[^\w\s]/g</span>)) <span class="comment">// a.match(): (2) [",", "!"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match(/Love/):'</span>, a.match(<span class="regexp">/Love/</span>)) <span class="comment">// a.match(/Love/): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match(/Love/g):'</span>, a.match(<span class="regexp">/Love/g</span>)) <span class="comment">// a.match(/Love/g): (2) ["Love", "Love"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="string">'Love'</span>)) <span class="comment">// a.match(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>exec(a)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'exec():'</span>, /Love/.exec(a)) <span class="comment">// exec(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'exec():'</span>, /Love/g.exec(a)) <span class="comment">// exec(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.search() 返回检索字符首次出现的位置, 不存在则返回-1,对大小写敏感</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.search():'</span>, a.search(<span class="string">'Love'</span>)) <span class="comment">// a.search(): 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.search():'</span>, a.search(<span class="string">'love'</span>)) <span class="comment">// a.search(): -1</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h3><ul>
-<li>a.replace() 用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="string">'China'</span>, <span class="string">'You'</span>)) <span class="comment">// a.replace(): I Love You, I Love China ! 只替换指定字符串第一次出现的位置</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="string">'China'</span>, <span class="string">''</span>)) <span class="comment">// a.replace(): I Love , I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="regexp">/China/g</span>, <span class="string">'You'</span>)) <span class="comment">// a.replace(): I Love You, I Love You ! 全部替换</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="regexp">/China/g</span>, <span class="string">''</span>)) <span class="comment">// a.replace(): I Love , I Love  !</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h3><ul>
-<li>a.slice(start, end) 使用 start（包含） 和 end（不包含）参数来指定字符串提取的部分</li>
-<li>如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice():'</span>, a.slice(<span class="number">0</span>)) <span class="comment">// a.slice(): I Love China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice():'</span>, a.slice(<span class="number">1</span>)) <span class="comment">// a.slice():  Love China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(0, 7):'</span>, a.slice(<span class="number">0</span>, <span class="number">7</span>)) <span class="comment">// a.slice(0, 7): I Love</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-1):'</span>, a.slice(<span class="number">-1</span>)) <span class="comment">// a.slice(-1): !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-6):'</span>, a.slice(<span class="number">-6</span>)) <span class="comment">// a.slice(-6): hina !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-6, -3):'</span>, a.slice(<span class="number">-6</span>, <span class="number">-3</span>)) <span class="comment">// a.slice(-6, -3): hin</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.substring(start, end) 使用 start（包含） 和 end（不包含）参数来指定字符串提取的部分,参数只能非负整数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substring():'</span>, a.substring(<span class="number">3</span>)) <span class="comment">// a.substring(): ove China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substring():'</span>, a.substring(<span class="number">2</span>, <span class="number">6</span>)) <span class="comment">// a.substring(): Love</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.substr(start, end) 从起始位置开始截取，结束位置为第二个参数截取的字符串最大长度</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substr():'</span>, a.substr(<span class="number">3</span>)) <span class="comment">// a.substr(): ove China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substr():'</span>, a.substr(<span class="number">2</span>, <span class="number">6</span>)) <span class="comment">// a.substr(): Love C</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h3><ul>
-<li>a.toLowerCase() 大-&gt;小</li>
-<li>a.toUpperCase() 小-&gt;大</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.toLowerCase():'</span>, a.toLowerCase()) <span class="comment">// a.toLowerCase(): i love china, i love china !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.toUpperCase():'</span>, a.toUpperCase()) <span class="comment">// a.toUpperCase(): I LOVE CHINA, I LOVE CHINA !</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串去空格"><a href="#字符串去空格" class="headerlink" title="字符串去空格"></a>字符串去空格</h3><ul>
-<li>a.trim() 删除字符串前后的空格</li>
-<li>let a = “     I Love China, I Love China !     “<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.trim():'</span>, a.trim()) <span class="comment">// a.trim(): I Love China, I Love China !</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/10/22/字符串操作方法汇总-JavaScript/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
