@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="字符串,">
+  <meta name="keywords" content="对象数组,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="字符串操作汇总 let num = 56字符串的转换 num.toString() String(num)  12console.log(&apos;num.toString():&apos;, num.toString(), typeof(num.toString())) // num.toString(): 56 stringconsole.log(&apos;String(num):&apos;, String(num), typ">
-<meta name="keywords" content="字符串">
+<meta name="description" content="对象数组去重12345678910111213141516171819202122232425262728293031let arr = [  &amp;#123;    key: &apos;1&apos;,    value: &apos;Queen&apos;  &amp;#125;,  &amp;#123;    key: &apos;2&apos;,    value: &apos;The Beatles&apos;  &amp;#125;,  &amp;#123;    key: &apos;3&apos;,    val">
+<meta name="keywords" content="对象数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符串操作方法汇总-JavaScript">
-<meta property="og:url" content="http://abbyyecp.com/2020/10/22/字符串操作方法汇总-JavaScript/index.html">
+<meta property="og:title" content="日常对数组进行的一些操作-JavaScript">
+<meta property="og:url" content="http://abbyyecp.com/2021/05/29/日常对数组进行的一些操作-JavaScript/index.html">
 <meta property="og:site_name" content="AbbyYeCp&#39;s blog">
-<meta property="og:description" content="字符串操作汇总 let num = 56字符串的转换 num.toString() String(num)  12console.log(&apos;num.toString():&apos;, num.toString(), typeof(num.toString())) // num.toString(): 56 stringconsole.log(&apos;String(num):&apos;, String(num), typ">
+<meta property="og:description" content="对象数组去重12345678910111213141516171819202122232425262728293031let arr = [  &amp;#123;    key: &apos;1&apos;,    value: &apos;Queen&apos;  &amp;#125;,  &amp;#123;    key: &apos;2&apos;,    value: &apos;The Beatles&apos;  &amp;#125;,  &amp;#123;    key: &apos;3&apos;,    val">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-10-26T02:34:50.229Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1oshdhv3j30lw07q758.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nc44uhrj30p606imxy.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nlejncvj30gy06egm5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nrwq5k4j30ts04yjru.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nyirg5kj30zw0hydhr.jpg">
+<meta property="og:updated_time" content="2021-05-31T08:32:09.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符串操作方法汇总-JavaScript">
-<meta name="twitter:description" content="字符串操作汇总 let num = 56字符串的转换 num.toString() String(num)  12console.log(&apos;num.toString():&apos;, num.toString(), typeof(num.toString())) // num.toString(): 56 stringconsole.log(&apos;String(num):&apos;, String(num), typ">
+<meta name="twitter:title" content="日常对数组进行的一些操作-JavaScript">
+<meta name="twitter:description" content="对象数组去重12345678910111213141516171819202122232425262728293031let arr = [  &amp;#123;    key: &apos;1&apos;,    value: &apos;Queen&apos;  &amp;#125;,  &amp;#123;    key: &apos;2&apos;,    value: &apos;The Beatles&apos;  &amp;#125;,  &amp;#123;    key: &apos;3&apos;,    val">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gr1oshdhv3j30lw07q758.jpg">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://abbyyecp.com/2020/10/22/字符串操作方法汇总-JavaScript/">
+  <link rel="canonical" href="http://abbyyecp.com/2021/05/29/日常对数组进行的一些操作-JavaScript/">
 
 
 
 
 
-  <title>字符串操作方法汇总-JavaScript | AbbyYeCp's blog</title>
+  <title>日常对数组进行的一些操作-JavaScript | AbbyYeCp's blog</title>
   
 
 
@@ -253,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2020/10/22/字符串操作方法汇总-JavaScript/">
+    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2021/05/29/日常对数组进行的一些操作-JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbbyYeCp">
@@ -270,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">字符串操作方法汇总-JavaScript</h1>
+          <h1 class="post-title" itemprop="name headline">日常对数组进行的一些操作-JavaScript</h1>
         
 
         <div class="post-meta">
@@ -282,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-22T11:42:40+08:00">
-                2020-10-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:17:36+08:00">
+                2021-05-29
               </time>
             
 
@@ -347,86 +353,17 @@
       
 
       
-        <h2 id="字符串操作汇总"><a href="#字符串操作汇总" class="headerlink" title="字符串操作汇总"></a>字符串操作汇总</h2><ul>
-<li>let num = 56<h3 id="字符串的转换"><a href="#字符串的转换" class="headerlink" title="字符串的转换"></a>字符串的转换</h3></li>
-<li>num.toString()</li>
-<li>String(num)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'num.toString():'</span>, num.toString(), <span class="keyword">typeof</span>(num.toString())) <span class="comment">// num.toString(): 56 string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'String(num):'</span>, <span class="built_in">String</span>(num), <span class="keyword">typeof</span>(<span class="built_in">String</span>(num))) <span class="comment">// String(num): 56 string</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>let a = “I Love China”</li>
-</ul>
-<h3 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h3><ul>
-<li>a.length</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.length:'</span>, a.length) <span class="comment">// a.length: 12</span></span><br></pre></td></tr></table></figure>
+        <h4 id="对象数组去重"><a href="#对象数组去重" class="headerlink" title="对象数组去重"></a>对象数组去重</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'4'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrFilter</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  <span class="keyword">let</span> arrNew = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">item, next</span>) </span>&#123;</span><br><span class="line">    obj[next.key] ? <span class="string">''</span> : obj[next.key] = <span class="literal">true</span> &amp;&amp; item.push(next)</span><br><span class="line">      <span class="keyword">return</span> item</span><br><span class="line">  &#125;, [])</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'arrNew:'</span>, arrNew)</span><br><span class="line">&#125;</span><br><span class="line">arrFilter()</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="指定位置字符"><a href="#指定位置字符" class="headerlink" title="指定位置字符"></a>指定位置字符</h3><ul>
-<li>a.charAt(index)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.charAt(8):'</span>, a.charAt(<span class="number">8</span>)) <span class="comment">// a.charAt(8): h</span></span><br></pre></td></tr></table></figure>
-<h3 id="指定位置字符Unicode编码"><a href="#指定位置字符Unicode编码" class="headerlink" title="指定位置字符Unicode编码"></a>指定位置字符Unicode编码</h3><ul>
-<li>a.charCodeAt(index)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.charCodeAt(8):'</span>, a.charCodeAt(<span class="number">8</span>)) <span class="comment">// a.charCodeAt(8): 104</span></span><br></pre></td></tr></table></figure>
-<h3 id="连接字符串"><a href="#连接字符串" class="headerlink" title="连接字符串"></a>连接字符串</h3><ul>
-<li>a.concat(b)</li>
-<li>let b = “ So Much !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.concat(b):'</span>, a.concat(b)) <span class="comment">// a.concat(b): I Love China So Much !</span></span><br></pre></td></tr></table></figure>
-<h3 id="检索字符串"><a href="#检索字符串" class="headerlink" title="检索字符串"></a>检索字符串</h3><ul>
-<li>a.indexOf() 返回检索字符首次出现的位置,不存在则返回-1,对大小写敏感</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("love"):'</span>, a.indexOf(<span class="string">"love"</span>)) <span class="comment">// a.indexOf("love"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("Love"):'</span>, a.indexOf(<span class="string">"Love"</span>)) <span class="comment">// a.indexOf("Love"): 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("Lovi"):'</span>, a.indexOf(<span class="string">"Lovi"</span>)) <span class="comment">// a.indexOf("Lovi"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.indexOf("I"):'</span>, a.indexOf(<span class="string">"I"</span>))       <span class="comment">// a.indexOf("I"): 0</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.lastIndexOf() 返回检索字符最后出现的位置,不存在则返回-1,对大小写敏感</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("love"):'</span>, a.lastIndexOf(<span class="string">"love"</span>)) <span class="comment">// a.lastIndexOf("love"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("Love"):'</span>, a.lastIndexOf(<span class="string">"Love"</span>)) <span class="comment">// a.lastIndexOf("Love"): 16</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("Lovi"):'</span>, a.lastIndexOf(<span class="string">"Lovi"</span>)) <span class="comment">// a.lastIndexOf("Lovi"): -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.lastIndexOf("I"):'</span>, a.lastIndexOf(<span class="string">"I"</span>))       <span class="comment">// a.lastIndexOf("I"): 14</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.match() 返回检索字符串内指定的值，或找到一个或多个正则表达式的匹配,结果返回数组</li>
-<li>数组拥有一个额外的 input 属性，该属性包含原始字符串。</li>
-<li>数组还拥有一个 index 属性，该属性表示匹配结果在被字符串中的索引（以0开始）。</li>
-<li>如果正则表达式包含 g 标志，则该方法返回匹配字符串的数组。</li>
-<li>let a = “I Love China, I Love China !”</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="string">'Y'</span>)) <span class="comment">// a.match(): null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="regexp">/[^\w\s]/g</span>)) <span class="comment">// a.match(): (2) [",", "!"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match(/Love/):'</span>, a.match(<span class="regexp">/Love/</span>)) <span class="comment">// a.match(/Love/): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match(/Love/g):'</span>, a.match(<span class="regexp">/Love/g</span>)) <span class="comment">// a.match(/Love/g): (2) ["Love", "Love"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.match():'</span>, a.match(<span class="string">'Love'</span>)) <span class="comment">// a.match(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>exec(a)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'exec():'</span>, /Love/.exec(a)) <span class="comment">// exec(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'exec():'</span>, /Love/g.exec(a)) <span class="comment">// exec(): ["Love", index: 2, input: "I Love China, I Love China !", groups: undefined]</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.search() 返回检索字符首次出现的位置, 不存在则返回-1,对大小写敏感</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.search():'</span>, a.search(<span class="string">'Love'</span>)) <span class="comment">// a.search(): 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.search():'</span>, a.search(<span class="string">'love'</span>)) <span class="comment">// a.search(): -1</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h3><ul>
-<li>a.replace() 用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="string">'China'</span>, <span class="string">'You'</span>)) <span class="comment">// a.replace(): I Love You, I Love China ! 只替换指定字符串第一次出现的位置</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="string">'China'</span>, <span class="string">''</span>)) <span class="comment">// a.replace(): I Love , I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="regexp">/China/g</span>, <span class="string">'You'</span>)) <span class="comment">// a.replace(): I Love You, I Love You ! 全部替换</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.replace():'</span>, a.replace(<span class="regexp">/China/g</span>, <span class="string">''</span>)) <span class="comment">// a.replace(): I Love , I Love  !</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串分割"><a href="#字符串分割" class="headerlink" title="字符串分割"></a>字符串分割</h3><ul>
-<li>a.slice(start, end) 使用 start（包含） 和 end（不包含）参数来指定字符串提取的部分</li>
-<li>如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice():'</span>, a.slice(<span class="number">0</span>)) <span class="comment">// a.slice(): I Love China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice():'</span>, a.slice(<span class="number">1</span>)) <span class="comment">// a.slice():  Love China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(0, 7):'</span>, a.slice(<span class="number">0</span>, <span class="number">7</span>)) <span class="comment">// a.slice(0, 7): I Love</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-1):'</span>, a.slice(<span class="number">-1</span>)) <span class="comment">// a.slice(-1): !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-6):'</span>, a.slice(<span class="number">-6</span>)) <span class="comment">// a.slice(-6): hina !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.slice(-6, -3):'</span>, a.slice(<span class="number">-6</span>, <span class="number">-3</span>)) <span class="comment">// a.slice(-6, -3): hin</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.substring(start, end) 使用 start（包含） 和 end（不包含）参数来指定字符串提取的部分,参数只能非负整数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substring():'</span>, a.substring(<span class="number">3</span>)) <span class="comment">// a.substring(): ove China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substring():'</span>, a.substring(<span class="number">2</span>, <span class="number">6</span>)) <span class="comment">// a.substring(): Love</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>a.substr(start, end) 从起始位置开始截取，结束位置为第二个参数截取的字符串最大长度</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substr():'</span>, a.substr(<span class="number">3</span>)) <span class="comment">// a.substr(): ove China, I Love China !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.substr():'</span>, a.substr(<span class="number">2</span>, <span class="number">6</span>)) <span class="comment">// a.substr(): Love C</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h3><ul>
-<li>a.toLowerCase() 大-&gt;小</li>
-<li>a.toUpperCase() 小-&gt;大</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.toLowerCase():'</span>, a.toLowerCase()) <span class="comment">// a.toLowerCase(): i love china, i love china !</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.toUpperCase():'</span>, a.toUpperCase()) <span class="comment">// a.toUpperCase(): I LOVE CHINA, I LOVE CHINA !</span></span><br></pre></td></tr></table></figure>
-<h3 id="字符串去空格"><a href="#字符串去空格" class="headerlink" title="字符串去空格"></a>字符串去空格</h3><ul>
-<li>a.trim() 删除字符串前后的空格</li>
-<li>let a = “     I Love China, I Love China !     “<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.trim():'</span>, a.trim()) <span class="comment">// a.trim(): I Love China, I Love China !</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gr1oshdhv3j30lw07q758.jpg" width="100%" style="margin:0;"></p>
+<h4 id="改变对象数组的键名-键值不变"><a href="#改变对象数组的键名-键值不变" class="headerlink" title="改变对象数组的键名 键值不变"></a>改变对象数组的键名 键值不变</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrReplace</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arrNew = arr.map(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      index: e.key,</span><br><span class="line">      name: e.value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'arrNew:'</span>, arrNew)</span><br><span class="line">&#125;</span><br><span class="line">arrReplace()</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nc44uhrj30p606imxy.jpg" width="100%" style="margin:0;"></p>
+<h4 id="删除数组中对象多余键值对"><a href="#删除数组中对象多余键值对" class="headerlink" title="删除数组中对象多余键值对"></a>删除数组中对象多余键值对</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrRemove</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arrNew = arr.map(<span class="function"><span class="params">e</span>=&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;key, ...item&#125; = e</span><br><span class="line">    <span class="keyword">return</span> item</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'arrNew:'</span>, arrNew)</span><br><span class="line">&#125;</span><br><span class="line">arrRemove()</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nlejncvj30gy06egm5.jpg" width="100%" style="margin:0;"></p>
+<h4 id="取对象键名和键值为新数组"><a href="#取对象键名和键值为新数组" class="headerlink" title="取对象键名和键值为新数组"></a>取对象键名和键值为新数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrRegroup</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">  arr.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">Object</span>.keys(item).forEach(<span class="function"><span class="params">keyItem</span> =&gt;</span> &#123;</span><br><span class="line">      obj.hasOwnProperty(keyItem) ? obj[keyItem].push(item[keyItem]) : obj[keyItem] = [item[keyItem]]</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'obj:'</span>, obj)</span><br><span class="line">&#125;</span><br><span class="line">arrRegroup()</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nrwq5k4j30ts04yjru.jpg" width="100%" style="margin:0;"></p>
+<h4 id="将两个对象数组合并成一个数组"><a href="#将两个对象数组合并成一个数组" class="headerlink" title="将两个对象数组合并成一个数组"></a>将两个对象数组合并成一个数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="keyword">let</span> arr1 = [</span><br><span class="line">  &#123;</span><br><span class="line">    genres: <span class="string">'rock'</span>,</span><br><span class="line">    label: <span class="string">'London, England'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    label: <span class="string">'Liverpool, United Kingdom'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    label: <span class="string">'London, England'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrMix</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arrNew = arr.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...item,</span><br><span class="line">      ...arr1[index]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'arrNew:'</span>, arrNew)</span><br><span class="line">&#125;</span><br><span class="line">arrMix()</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gr1nyirg5kj30zw0hydhr.jpg" width="100%" style="margin:0;"></p>
 
       
     </div>
@@ -473,7 +410,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/对象数组/" rel="tag"># 对象数组</a>
           
         </div>
       
@@ -486,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/20/前端-this-的理解/" rel="next" title="前端 this 的理解">
-                <i class="fa fa-chevron-left"></i> 前端 this 的理解
+              <a href="/2020/10/22/字符串操作方法汇总-JavaScript/" rel="next" title="字符串操作方法汇总-JavaScript">
+                <i class="fa fa-chevron-left"></i> 字符串操作方法汇总-JavaScript
               </a>
             
           </div>
@@ -495,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/05/29/日常对数组进行的一些操作-JavaScript/" rel="prev" title="日常对数组进行的一些操作-JavaScript">
-                日常对数组进行的一些操作-JavaScript <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串操作汇总"><span class="nav-number">1.</span> <span class="nav-text">字符串操作汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的转换"><span class="nav-number">1.1.</span> <span class="nav-text">字符串的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的长度"><span class="nav-number">1.2.</span> <span class="nav-text">字符串的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定位置字符"><span class="nav-number">1.3.</span> <span class="nav-text">指定位置字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定位置字符Unicode编码"><span class="nav-number">1.4.</span> <span class="nav-text">指定位置字符Unicode编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接字符串"><span class="nav-number">1.5.</span> <span class="nav-text">连接字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检索字符串"><span class="nav-number">1.6.</span> <span class="nav-text">检索字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">1.7.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串分割"><span class="nav-number">1.8.</span> <span class="nav-text">字符串分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串大小写转换"><span class="nav-number">1.9.</span> <span class="nav-text">字符串大小写转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串去空格"><span class="nav-number">1.10.</span> <span class="nav-text">字符串去空格</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象数组去重"><span class="nav-number">1.</span> <span class="nav-text">对象数组去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改变对象数组的键名-键值不变"><span class="nav-number">2.</span> <span class="nav-text">改变对象数组的键名 键值不变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数组中对象多余键值对"><span class="nav-number">3.</span> <span class="nav-text">删除数组中对象多余键值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取对象键名和键值为新数组"><span class="nav-number">4.</span> <span class="nav-text">取对象键名和键值为新数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将两个对象数组合并成一个数组"><span class="nav-number">5.</span> <span class="nav-text">将两个对象数组合并成一个数组</span></a></li></ol></div>
             
 
           </div>
