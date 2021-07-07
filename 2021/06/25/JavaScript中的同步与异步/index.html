@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="同步与异步,">
 
 
 
@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="这些年来，她东奔西走，无人伴她以歌，无人伴她以酒，到最后，竟也无人伴她共白头。 ——夏七夕 《飞过有你的城市》">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AbbyYeCp&#39;s blog">
-<meta property="og:url" content="http://abbyyecp.com/index.html">
+<meta name="description" content="同步 Synchronous  Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。    实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。 进程  CPU 进行资源分配的基本单位">
+<meta name="keywords" content="同步与异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的同步与异步">
+<meta property="og:url" content="http://abbyyecp.com/2021/06/25/JavaScript中的同步与异步/index.html">
 <meta property="og:site_name" content="AbbyYeCp&#39;s blog">
-<meta property="og:description" content="这些年来，她东奔西走，无人伴她以歌，无人伴她以酒，到最后，竟也无人伴她共白头。 ——夏七夕 《飞过有你的城市》">
+<meta property="og:description" content="同步 Synchronous  Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。    实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。 进程  CPU 进行资源分配的基本单位">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1grumkgti57j30m80cq42g.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gs70b1z599j30cl06a0tj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gs70k7obrzj308a038mxc.jpg">
+<meta property="og:updated_time" content="2021-07-07T08:32:45.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AbbyYeCp&#39;s blog">
-<meta name="twitter:description" content="这些年来，她东奔西走，无人伴她以歌，无人伴她以酒，到最后，竟也无人伴她共白头。 ——夏七夕 《飞过有你的城市》">
+<meta name="twitter:title" content="JavaScript中的同步与异步">
+<meta name="twitter:description" content="同步 Synchronous  Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。    实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。 进程  CPU 进行资源分配的基本单位">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1grumkgti57j30m80cq42g.jpg">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://abbyyecp.com/">
+  <link rel="canonical" href="http://abbyyecp.com/2021/06/25/JavaScript中的同步与异步/">
 
 
 
 
 
-  <title>AbbyYeCp's blog</title>
+  <title>JavaScript中的同步与异步 | AbbyYeCp's blog</title>
   
 
 
@@ -143,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/25/JavaScript中的同步与异步/" itemprop="url">JavaScript中的同步与异步</a></h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript中的同步与异步</h1>
         
 
         <div class="post-meta">
@@ -325,6 +328,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
 
           
 
@@ -343,9 +351,7 @@
       
 
       
-        
-          
-            <h1 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步 Synchronous"></a>同步 Synchronous</h1><p>  <em>Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。</em> </p>
+        <h1 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步 Synchronous"></a>同步 Synchronous</h1><p>  <em>Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。</em> </p>
 <p>  实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。</p>
 <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>  CPU 进行资源分配的基本单位。<br>  通俗讲，进程可以描述为一个应用程序的执行程序。<br>  <!-- 它是系统进行资源分配和调度的一个独立单位,具有一定独立功能的程序关于某个数据集合上的一次运行活动,可以粗俗的理解为主(大)任务。 --></p>
 <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>  CPU 调度的最小单位。<br>  通俗讲，线程则是进程内部用来执行某个部分的程序。<br>  <!-- 安排CPU执行的最小单位,可以理解为子任务。 --></p>
@@ -574,8 +580,6 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -585,19 +589,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="AbbyYeCp 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="AbbyYeCp 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/同步与异步/" rel="tag"># 同步与异步</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/06/15/JavaScript-中的数据类型/" rel="next" title="JavaScript 中的数据类型">
+                <i class="fa fa-chevron-left"></i> JavaScript 中的数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -607,1368 +662,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2021/06/15/JavaScript-中的数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/06/15/JavaScript-中的数据类型/" itemprop="url">JavaScript 中的数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-15T19:11:20+08:00">
-                2021-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="JavaScript有几种数据类型"><a href="#JavaScript有几种数据类型" class="headerlink" title="JavaScript有几种数据类型 ?"></a>JavaScript有几种数据类型 ?</h4><p>  <em>因为 JavaScript 是弱类型语言或者说是动态语言。这意味着我们不需要提前声明变量的类型，在程序运行的过程中，类型会被自动确定，也就是说你可以使用同一个变量保存不同类型的值。</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="number">42</span>;  <span class="comment">// foo is a Number now</span></span><br><span class="line">foo = <span class="string">"bar"</span>;  <span class="comment">// foo is a String now</span></span><br><span class="line">foo = <span class="literal">true</span>;   <span class="comment">// foo is a Boolean now</span></span><br></pre></td></tr></table></figure>
-<h5 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h5><ul>
-<li>Null (空)</li>
-<li>Undefined (未定义)</li>
-<li>Boolean (布尔)</li>
-<li>String (字符串)</li>
-<li>Number (数字)</li>
-<li>BigInt (ES10 比Number数据类型支持的范围更大的整数值)</li>
-<li>Symbol (ES6 引入了一种新的原始数据类型，表示独一无二的值)<!-- *Symbol 是ES6新增的一种基本数据类型。我们可以通过调用内置函数 Symbol() 创建，这个函数会动态的生成一个匿名、全局唯一的值。* -->
-</li>
-</ul>
-<h5 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h5><ul>
-<li>Object<br><em>普通对象-Object、数组对象-Array、正则对象-RegExp、日期对象-Date、数学函数-Math、函数对象-Function</em></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/06/15/JavaScript-中的数据类型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2021/05/29/日常对数组进行的一些操作-JavaScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/05/29/日常对数组进行的一些操作-JavaScript/" itemprop="url">日常对数组进行的一些操作-JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T15:17:36+08:00">
-                2021-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="对象数组去重"><a href="#对象数组去重" class="headerlink" title="对象数组去重"></a>对象数组去重</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Queen'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'2'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'3'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'1'</span>,</span><br><span class="line">    value: <span class="string">'Rolling Stones'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    key: <span class="string">'4'</span>,</span><br><span class="line">    value: <span class="string">'The Beatles'</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrFilter</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line">  <span class="keyword">let</span> arrNew = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">item, next</span>) </span>&#123;</span><br><span class="line">    obj[next.key] ? <span class="string">''</span> : obj[next.key] = <span class="literal">true</span> &amp;&amp; item.push(next)</span><br><span class="line">      <span class="keyword">return</span> item</span><br><span class="line">  &#125;, [])</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'arrNew:'</span>, arrNew)</span><br><span class="line">&#125;</span><br><span class="line">arrFilter()</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/05/29/日常对数组进行的一些操作-JavaScript/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2020/10/22/字符串操作方法汇总-JavaScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/22/字符串操作方法汇总-JavaScript/" itemprop="url">字符串操作方法汇总-JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-22T11:42:40+08:00">
-                2020-10-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="字符串操作汇总"><a href="#字符串操作汇总" class="headerlink" title="字符串操作汇总"></a>字符串操作汇总</h2><ul>
-<li>let num = 56<h3 id="字符串的转换"><a href="#字符串的转换" class="headerlink" title="字符串的转换"></a>字符串的转换</h3></li>
-<li>num.toString()</li>
-<li>String(num)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'num.toString():'</span>, num.toString(), <span class="keyword">typeof</span>(num.toString())) <span class="comment">// num.toString(): 56 string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'String(num):'</span>, <span class="built_in">String</span>(num), <span class="keyword">typeof</span>(<span class="built_in">String</span>(num))) <span class="comment">// String(num): 56 string</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>let a = “I Love China”</li>
-</ul>
-<h3 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h3><ul>
-<li>a.length</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'a.length:'</span>, a.length) <span class="comment">// a.length: 12</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/22/字符串操作方法汇总-JavaScript/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2020/03/20/前端-this-的理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/前端-this-的理解/" itemprop="url">前端 this 的理解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T17:28:18+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><em>this是什么?this 不是指向自身,this 就是一个指针，指向调用函数的对象。</em></p>
-<h2 id="this的绑定规则"><a href="#this的绑定规则" class="headerlink" title="this的绑定规则"></a>this的绑定规则</h2><h3 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h3><p>  <em>非严格模式下,在调用Hi()时，应用了默认绑定，this指向全局对象</em><br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello,'</span>, <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Abby'</span></span><br><span class="line">sayHi() <span class="comment">// Hello, Abby</span></span><br></pre></td></tr></table></figure></p>
-<p>  <em>严格模式下，this指向undefined，undefined上没有this对象，会抛出错误。</em><br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span> <span class="comment">// 严格模式下</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello,'</span>, <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Abby'</span></span><br><span class="line">sayHi()</span><br></pre></td></tr></table></figure></p>
-<p>  <img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd3pzz0h79j30pm03sgm8.jpg" width="100%"></p>
-<p>  <em>但是如果在node环境中运行，结果就是 Hello,undefined.这是因为node中name并不是挂在全局对象上的。</em></p>
-<h3 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/20/前端-this-的理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2020/03/18/ES6语法汇总/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/18/ES6语法汇总/" itemprop="url">ES6语法汇总</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T10:20:53+08:00">
-                2020-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="var、let和const"><a href="#var、let和const" class="headerlink" title="var、let和const"></a>var、let和const</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 输出3个3</span></span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><em>解析：变量i是var声明的，在全局范围内是都有效，全局只有一个变量i。每次循环，变量的值会发生改变。循环内的i是指向全局的i.</em></p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 输出0, 1, 2</span></span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/18/ES6语法汇总/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2020/03/13/Hexo-Github-pages-搭建个人独立博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/13/Hexo-Github-pages-搭建个人独立博客/" itemprop="url">Hexo + Github pages 搭建个人独立博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T17:53:46+08:00">
-                2020-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><ul>
-<li>GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面。<br><em><a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages" target="_blank" rel="noopener">What is GitHub Pages? - GitHub Help</a></em></li>
-</ul>
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ul>
-<li>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。<br><em><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">What is Hexo? - Hexo Help</a></em></li>
-</ul>
-<h3 id="Hexo-GitHub-文章发布原理"><a href="#Hexo-GitHub-文章发布原理" class="headerlink" title="Hexo + GitHub 文章发布原理"></a>Hexo + GitHub 文章发布原理</h3><ul>
-<li>在本地撰写 Markdown 格式文章后，通过 Hexo 解析文档，渲染生成具有主题样式的 HTML 静态网页，再推送到 GitHub 上完成博文的发布。</li>
-</ul>
-<h4 id="优点和不足"><a href="#优点和不足" class="headerlink" title="优点和不足"></a>优点和不足</h4><ul>
-<li>优点：完全免费；静态站点，轻量快速；可按需求自由定制改造；托管在 GitHub，安全省心；迁移方便……</li>
-<li>不足：发文不便，依赖于本地环境；更适合个人博客使用；GitHub 在国内访问速度有点不快。</li>
-</ul>
-<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/13/Hexo-Github-pages-搭建个人独立博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2019/12/27/遍历数组方法汇总/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/27/遍历数组方法汇总/" itemprop="url">遍历数组方法汇总</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-27T09:53:40+08:00">
-                2019-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><ul>
-<li>创建数组<br>let arr = [‘生死疲劳’, ‘灿烂千阳’, ‘群山回唱’, ‘失眠之夜’, ‘金驴记’] // 一维数组</li>
-</ul>
-<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]) <span class="comment">// 生死疲劳 灿烂千阳 群山回唱 失眠之夜 金驴记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gab3j5wru5j30is0dyq3i.jpg" width="100%" style="margin:0;"></p>
-<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function">(<span class="params">item, index, arr</span>)=&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(item) <span class="comment">// 生死疲劳 灿烂千阳 群山回唱 失眠之夜 金驴记 </span></span><br><span class="line">   <span class="built_in">console</span>.log(index) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">   <span class="built_in">console</span>.log(arr) <span class="comment">// ['生死疲劳','灿烂千阳','群山回唱','失眠之夜','金驴记']</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/27/遍历数组方法汇总/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2019/11/21/ruby-on-rails-讨论版/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/21/ruby-on-rails-讨论版/" itemprop="url">ruby on rails-讨论版</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T10:06:30+08:00">
-                2019-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本着“不全栈,无出路”的想法,成功入坑了ruby on rails,以下是本人跟着xdite老师全栈营上Rails 101课件码讨论版做的一个记录.<br>开发环境:<br>ruby-2.6.4<br>rails-6.0.1<br>node-12.13.0<br>(xdite教材用的 Rails 版本是 5.0.0 )</p>
-<h2 id="建立一个新-Rails-项目"><a href="#建立一个新-Rails-项目" class="headerlink" title="建立一个新 Rails 项目"></a>建立一个新 Rails 项目</h2><p>rails new 项目名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rails new rails104</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95gn8a8esj31gk0botgx.jpg" width="100%"></p>
-<h2 id="建立-git-做版本控制"><a href="#建立-git-做版本控制" class="headerlink" title="建立 git 做版本控制"></a>建立 git 做版本控制</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> rails104</span><br><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"Initial Commit"</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95i2sg5vtj31gg09kwqf.jpg" width="100%" style="margin:0;"></p>
-<h2 id="帮-Rails-项目穿上衣服“Bootstrap”"><a href="#帮-Rails-项目穿上衣服“Bootstrap”" class="headerlink" title="帮 Rails 项目穿上衣服“Bootstrap”"></a>帮 Rails 项目穿上衣服“Bootstrap”</h2><ul>
-<li>新建一个分支 git checkout -b 分支名<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b abby01</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g95h9ylc83j31go05qq9q.jpg" width="100%" style="margin:0;"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/21/ruby-on-rails-讨论版/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://abbyyecp.com/2019/05/06/CSS选择符号/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbbyYeCp">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gcy8728tmej30oq0osakf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbbyYeCp's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/06/CSS选择符号/" itemprop="url">CSS选择符</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T13:44:06+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-Class"><a href="#1-Class" class="headerlink" title="1. Class ."></a>1. Class .</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>Hello,YCH!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>Hello,CQY!<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">.text&#123;</span></span><br><span class="line"><span class="undefined">  color:brown;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-Id"><a href="#2-Id" class="headerlink" title="2. Id #"></a>2. Id #</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"text"</span>&gt;</span>How are you ?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">#text&#123;</span></span><br><span class="line"><span class="undefined">  color:teal;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-通用选择器-星号选择器"><a href="#3-通用选择器-星号选择器" class="headerlink" title="3. 通用选择器(星号选择器) *"></a>3. 通用选择器(星号选择器) *</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>生死疲劳<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Emma<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>灿烂千阳<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">*&#123;</span></span><br><span class="line"><span class="undefined">  color:blue;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/06/CSS选择符号/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1976,6 +674,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1996,8 +698,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -2071,9 +782,50 @@
           
 
           
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script src="//cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.min.js"></script>
+  <script>
+      var gitalk = new Gitalk({
+        clientID: 'b327f84bfaa4514ffd4f',
+        clientSecret: '314224abe617337c55473f368397e366d483fd62',
+        repo: 'AbbyXYeCp.github.io',
+        owner: 'AbbyXYecp',
+        admin: 'AbbyXYecp',
+        id: md5(location.pathname),
+        distractionFreeMode: 'true'
+      });
+      var div = document.createElement('div');
+      div.setAttribute("id", "gitalk_comments");
+      div.setAttribute("class", "post-nav");
+      var bro = document.getElementById('posts').getElementsByTagName('article');
+      bro = bro[0].getElementsByClassName('post-block');
+      bro = bro[0].getElementsByTagName('footer');
+      bro = bro[0];
+      bro.appendChild(div);
+      gitalk.render('gitalk_comments');
+  </script>
+  
+
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同步-Synchronous"><span class="nav-number">1.</span> <span class="nav-text">同步 Synchronous</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系"><span class="nav-number">1.3.</span> <span class="nav-text">关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">1.4.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么js是单线程"><span class="nav-number">1.5.</span> <span class="nav-text">为什么js是单线程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步-Asynchronous"><span class="nav-number">2.</span> <span class="nav-text">异步 Asynchronous</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步编程六种方案"><span class="nav-number">2.1.</span> <span class="nav-text">异步编程六种方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#callback-回调函数"><span class="nav-number">2.1.1.</span> <span class="nav-text">callback 回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件监听"><span class="nav-number">2.1.2.</span> <span class="nav-text">事件监听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布-订阅"><span class="nav-number">2.1.3.</span> <span class="nav-text">发布/订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-对象"><span class="nav-number">2.1.4.</span> <span class="nav-text">Promise 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-的三个实例方法"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">Promise 的三个实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-prototype-then-onFulfilled-onRejected"><span class="nav-number">2.1.4.2.1.</span> <span class="nav-text">Promise.prototype.then(onFulfilled, onRejected)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-prototype-catch-onRejected"><span class="nav-number">2.1.4.2.2.</span> <span class="nav-text">Promise.prototype.catch(onRejected)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-prototype-finally"><span class="nav-number">2.1.4.2.3.</span> <span class="nav-text">Promise.prototype.finally()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-的两个静态方法"><span class="nav-number">2.1.4.3.</span> <span class="nav-text">Promise 的两个静态方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise-all-iterable"><span class="nav-number">2.1.4.3.1.</span> <span class="nav-text">Promise.all(iterable)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#promise-race-iterable"><span class="nav-number">2.1.4.3.2.</span> <span class="nav-text">promise.race(iterable)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generators-yield-生成器"><span class="nav-number">2.1.5.</span> <span class="nav-text">Generators / yield 生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-1"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">yield</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-1"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">yield*</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next"><span class="nav-number">2.1.5.4.</span> <span class="nav-text">next()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async…await"><span class="nav-number">2.1.6.</span> <span class="nav-text">async…await</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#async"><span class="nav-number">2.1.6.1.</span> <span class="nav-text">async</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#await"><span class="nav-number">2.1.6.2.</span> <span class="nav-text">await</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#async…await中的错误处理"><span class="nav-number">2.1.6.3.</span> <span class="nav-text">async…await中的错误处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优势"><span class="nav-number">2.1.6.4.</span> <span class="nav-text">优势</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2509,6 +1261,10 @@ if(canvas.getContext){
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
