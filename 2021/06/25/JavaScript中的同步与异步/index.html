@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1grumkgti57j30m80cq42g.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gs70b1z599j30cl06a0tj.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNgy1gs70k7obrzj308a038mxc.jpg">
-<meta property="og:updated_time" content="2021-07-07T08:32:45.577Z">
+<meta property="og:updated_time" content="2021-07-07T08:34:20.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的同步与异步">
 <meta name="twitter:description" content="同步 Synchronous  Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。    实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。 进程  CPU 进行资源分配的基本单位">
@@ -354,7 +354,7 @@
         <h1 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步 Synchronous"></a>同步 Synchronous</h1><p>  <em>Javascript语言的执行环境是“单线程”(single thread)的。也就是说，在同一时间段内，只能处理一个任务，干一件事情，然后再去处理下一个任务。浏览器解析网页中的js代码，是逐行进行读取，从上至下执行，按照一定的顺序去执行的。</em> </p>
 <p>  实例场景：打电话就是一个同步的例子，必须等待打完了一个，然后再接着打下一个的。</p>
 <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>  CPU 进行资源分配的基本单位。<br>  通俗讲，进程可以描述为一个应用程序的执行程序。<br>  <!-- 它是系统进行资源分配和调度的一个独立单位,具有一定独立功能的程序关于某个数据集合上的一次运行活动,可以粗俗的理解为主(大)任务。 --></p>
-<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>  CPU 调度的最小单位。<br>  通俗讲，线程则是进程内部用来执行某个部分的程序。<br>  <!-- 安排CPU执行的最小单位,可以理解为子任务。 --></p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>  CPU 调度的最小单位。<br>  通俗讲，线程则是进程内部用来执行某个部分的程序。<br>  <!-- 安排CPU执行的最小单位,可以理解为子任务。 --><br><a id="more"></a></p>
 <h2 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h2><p>  线程是隶属于进程的（视作为进程的子集），被包含于进程之中。一个线程只能隶属于一个进程，但是一个进程是可以拥有多个线程并发执行的。</p>
 <p>  <em>下面引用一段非常有意思的知乎的高赞回答：</em><br>  <img src="https://tva1.sinaimg.cn/large/008i3skNgy1grumkgti57j30m80cq42g.jpg" width="50%"></p>
 <p>  做个简单的比喻：进程=火车，线程=车厢</p>
